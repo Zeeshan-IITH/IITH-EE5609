@@ -1,8 +1,9 @@
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
-
+\usepackage{mathtools}
 \usepackage{setspace}
 \usepackage{gensymb}
 \usepackage{amsmath}
+\usepackage{commath}
 \singlespacing
 
 \usepackage{listings}
@@ -17,40 +18,48 @@ columns=fullflexible
 \begin{document}
 \begin{center}
 \huge Assignment 1\\
-\\*
-\\*
 
 \large Shaik Zeeshan Ali\\
-\normalize AI20MTECH11001\\
+\large AI20MTECH11001\\
 \end{center}
+\vspace{0.5cm}
 \begin{abstract}
 This document explains the properties of a unit vector and how to find out if two vectors are perpendicular, using an example of three mutually perpendicular unit vectors
 \end{abstract}
-
-\\Download all python codes from 
+\vspace{0.5cm}
+Download all python codes from 
 \begin{lstlisting}
 https://github.com/Zeeshan-IITH/IITH-EE5609/new/master/codes
 \end{lstlisting}
 %
-\\and latex-tikz codes from 
-
-
+and latex-tikz codes from 
 \begin{lstlisting}
 https://github.com/Zeeshan-IITH/IITH-EE5609
 \end{lstlisting}
 %
+\vspace{0.5cm}
 \section{Problem}
-show that each of the given three vectors is a unit vector 
-\(\frac{1}{7}\) \begin{pmatrix}2 \\3 \\6\end{pmatrix},
-\(\frac{1}{7}\) \begin{pmatrix}3 \\-6 \\2\end{pmatrix},
-\(\frac{1}{7}\) \begin{pmatrix}6 \\2 \\-3\end{pmatrix}.
-\\Also show that they are mutually perpendicular to each other.
+show that each of the given three vectors is a unit vector
+
+\(\frac{1}{7}\) $\begin{pmatrix}2 \\3 \\6\end{pmatrix}$,
+\(\frac{1}{7}\) $\begin{pmatrix}3 \\-6 \\2\end{pmatrix}$,
+\(\frac{1}{7}\) $\begin{pmatrix}6 \\2 \\-3\end{pmatrix}$.
 
 \section{Explanation}
-A unit vector is a vector of unit magnitude.\\
-let \begin{align}
-    a$=\(\frac{1}{7}\) \begin{pmatrix}2 \\3 \\6\end{pmatrix},b$=\(\frac{1}{7}\) \begin{pmatrix}3 \\-6 \\2\end{pmatrix},c$=\(\frac{1}{7}\) \begin{pmatrix}6 \\2 \\-3\end{pmatrix}\\
-\end{align}
-\norm{\vec{a}}=1\\
-
+A unit vector is a vector of unit magnitude.
+\vspace{0.5cm} let $\vec{a}$=\(\frac{1}{7}\) $\begin{pmatrix}2 \\3 \\6\end{pmatrix}$,$\vec{b}$=\(\frac{1}{7}\) $\begin{pmatrix}3 \\-6 \\2\end{pmatrix}$,$\vec{c}$=\(\frac{1}{7}\) $\begin{pmatrix}6 \\2 \\-3\end{pmatrix}$\\
+\abs{\vec{a}}=\(\frac{1}{7}\)$\sqrt{2^2+3^2+6^2}$=1\\
+\abs{\vec{b}}=\(\frac{1}{7}\)$\sqrt{3^2+-6^2+2^2}$=1\\
+\abs{\vec{c}}=\(\frac{1}{7}\)$\sqrt{6^2+2^2+-3^2}$=1\\
+\section{Problem}
+Also show that the three vectors are mutually perpendicular to each other
+\section{Explanation}
+\noindent
+When two vectors are perpendicular to each other their dot product is zero.\par
+The dot product of $\vec{a}$ and $\vec{b}$ is\par
+$\vec{a}$.$\vec{b}$=\(\frac{1}{7}\)\cdot\(\frac{1}{7}\)(2\cdot3+3\cdot-6+6\cdot2)$=0\par
+The dot product of $\vec{b}$ and $\vec{c}$ is \par
+$\vec{a}$.$\vec{b}$=$\(\frac{1}{7}\)\cdot\(\frac{1}{7}\)(2\cdot3+3\cdot-6+6\cdot2)$=0\par
+The dot product of $\vec{c}$ and $\vec{a}$ is \par
+$\vec{c}$.$\vec{a}$=$\(\frac{1}{7}\)\cdot\(\frac{1}{7}\)(6\cdot2+2\cdot3+-3\cdot6)$=0
 \end{document}
