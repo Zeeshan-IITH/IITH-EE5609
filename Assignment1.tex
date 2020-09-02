@@ -1,12 +1,57 @@
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
-\usepackage{mathtools}
+
 \usepackage{setspace}
 \usepackage{gensymb}
-\usepackage{amsmath}
-\usepackage{commath}
+
 \singlespacing
 
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
 \usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+\DeclareMathOperator*{\Res}{Res}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+\newcommand{\bignorm}[1]{\Bigl \| #1 \Bigr \| #1}
+\newcommand{\norm}[1]{\| #1 \|}
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
 
 \lstset{
 frame=single, 
@@ -47,19 +92,19 @@ show that each of the given three vectors is a unit vector
 
 \section{Explanation}
 A unit vector is a vector of unit magnitude.
-\vspace{0.5cm} let $\vec{a}$=\(\frac{1}{7}\) $\begin{pmatrix}2 \\3 \\6\end{pmatrix}$,$\vec{b}$=\(\frac{1}{7}\) $\begin{pmatrix}3 \\-6 \\2\end{pmatrix}$,$\vec{c}$=\(\frac{1}{7}\) $\begin{pmatrix}6 \\2 \\-3\end{pmatrix}$\\
-\norm{\vec{a}}=\(\frac{1}{7}\)$\sqrt{2^2+3^2+6^2}$=1\\
-\norm{\vec{b}}=\(\frac{1}{7}\)$\sqrt{3^2+-6^2+2^2}$=1\\
-\norm{\vec{c}}=\(\frac{1}{7}\)$\sqrt{6^2+2^2+-3^2}$=1\\
+\vspace{0.5cm} let $\bm{A}$=\(\frac{1}{7}\) $\begin{pmatrix}2 \\3 \\6\end{pmatrix}$,$\bm{B}$=\(\frac{1}{7}\) $\begin{pmatrix}3 \\-6 \\2\end{pmatrix}$,$\bm{C}$=\(\frac{1}{7}\) $\begin{pmatrix}6 \\2 \\-3\end{pmatrix}$\\
+\norm{\bm{A}}=\(\frac{1}{7}\)$\sqrt{2^2+3^2+6^2}$=1\\
+$\norm{\bm{B}}$=\(\frac{1}{7}\)$\sqrt{3^2+-6^2+2^2}$=1\\
+$\norm{\bm{C}}$=\(\frac{1}{7}\)$\sqrt{6^2+2^2+-3^2}$=1\\
 \section{Problem}
 Also show that the three vectors are mutually perpendicular to each other
 \section{Explanation}
 \noindent
 When two vectors are perpendicular to each other their dot product is zero.\par
 The dot product of $\vec{a}$ and $\vec{b}$ is\par
-$A^TB$=\(\frac{1}{7}\)\cdot\(\frac{1}{7}\)(2\cdot3+3\cdot-6+6\cdot2)$=0\par
+$\bm{A}^T\bm{B}$=\(\frac{1}{7}\)\cdot\(\frac{1}{7}\)(2\cdot3+3\cdot-6+6\cdot2)$=0\par
 The dot product of $\vec{b}$ and $\vec{c}$ is \par
-$B^TC$=$\(\frac{1}{7}\)\cdot\(\frac{1}{7}\)(2\cdot3+3\cdot-6+6\cdot2)$=0\par
+$\bm{B}^T\bm{C}$=$\(\frac{1}{7}\)\cdot\(\frac{1}{7}\)(2\cdot3+3\cdot-6+6\cdot2)$=0\par
 The dot product of $\vec{c}$ and $\vec{a}$ is \par
-$C^TA$=$\(\frac{1}{7}\)\cdot\(\frac{1}{7}\)(6\cdot2+2\cdot3+-3\cdot6)$=0
+$\bm{C}^T\bm{A}$=$\(\frac{1}{7}\)\cdot\(\frac{1}{7}\)(6\cdot2+2\cdot3+-3\cdot6)$=0
 \end{document}
