@@ -35,7 +35,8 @@
     \usepackage{hhline}                                           %%
     \usepackage{ifthen}                                           %%
   %optionally (for landscape tables embedded in another document): %%
-    \usepackage{lscape}     
+    \usepackage{lscape}    
+\usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{chngcntr}
 \DeclareMathOperator*{\Res}{Res}
@@ -131,4 +132,14 @@ The shortest distance between the lines is the absolute value of projection of t
     =\frac{3}{\sqrt{2}}\notag
 \end{equation}
 Therefore the shortest distance between the given lines is $\frac{3}{\sqrt{2}}$
+\begin{center}
+    \includegraphics[width=12cm]{assignment2.jpg}
+\end{center}
+To find the points on the lines which make up the shortest distance we need to find $\lambda_1$ and $\lambda_2$ using the following expression\\
+\begin{align}
+    \begin{pmatrix}\bm{b_1^T}\bm{b_1} & -\bm{b_1^T}\bm{b_2}\\\bm{b_2^T}\bm{b_1} &  -\bm{b_2^T}\bm{b_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\\lambda_2\end{pmatrix}=\begin{pmatrix}\bm{b_1^T}(x_2-x_1)\\\bm{b_2^T}(x_2-x_1)\end{pmatrix}\notag\\
+    \intertext{we know that\notag\\}
+    x_1=\begin{pmatrix}1\\2\\1\end{pmatrix},x_2=\begin{pmatrix}2\\-1\\-1\end{pmatrix},\bm{b_1}=\begin{pmatrix}1\\-1\\1\end{pmatrix} and  \bm{b_2}=\begin{pmatrix}2\\1\\2\end{pmatrix}\notag
+\end{align}
+Using the above expression, we get the points as $\frac{1}{12}\begin{pmatrix}27\\-3\\27\end{pmatrix}$ and $\frac{1}{12}\begin{pmatrix}10\\-19\\-26\end{pmatrix}$ on the line $L_1$,$L_2$ respectively
 \end{document}
