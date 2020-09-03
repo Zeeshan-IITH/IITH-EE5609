@@ -58,7 +58,7 @@ frame=single,
 breaklines=true,
 columns=fullflexible
 }
-
+\usepackage{graphicx}
 
 \begin{document}
 \begin{center}
@@ -119,4 +119,15 @@ simplifying it further\\
     \begin{pmatrix}\bm{v_1^T}\bm{v_1} & -\bm{v_1^T}\bm{v_2}\\\bm{v_2^T}\bm{v_1} &  -\bm{v_2^T}\bm{v_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\\lambda_2\end{pmatrix}=\begin{pmatrix}\bm{v_1^T}(x_2-x_1)\\\bm{v_2^T}(x_2-x_1)\end{pmatrix}
 \end{align}
 Solving the equation $(9)$ we get the values of $\lambda_1$ and $\lambda_2$.Substituting the values of $\lambda_1$ and $\lambda_2$ in the equations $(3)$ and $(4)$ we get the values of the point $\bm{a}$ and $\bm{b}$.
+\section{example}
+Find the points where the distance is shortest between the lines \\
+\begin{align}
+    L_1\colon \bm{x}= \begin{pmatrix}1\\2\\1\end{pmatrix}+\lambda_1\begin{pmatrix}1\\-1\\1\end{pmatrix}\notag\\
+    L_2\colon \bm{x}= \begin{pmatrix}2\\-1\\-1\end{pmatrix}+\lambda_2\begin{pmatrix}2\\1\\2\end{pmatrix}\notag
+\end{align}
+Using the above equation (9) to solve we get the points as $\frac{1}{12}\begin{pmatrix}27\\-3\\27\end{pmatrix}$ and $\frac{1}{12}\begin{pmatrix}10\\-19\\-26\end{pmatrix}$ as shown in the figure\\
+\begin{center}
+    \includegraphics[width=11cm]{assignment2.jpg}
+\end{center}
+
 \end{document}
