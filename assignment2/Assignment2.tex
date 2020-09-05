@@ -109,37 +109,35 @@ If the two line intersect then (3)=(4) i.e.
 The above matrix has a $rank=3$ .Hence the lines do not intersect
 \section{solution}
 Let $\bm{A}$ be a point on line $L_1$ and $\bm{B}$ be point on the line $L_2$.Then the shortest distance between two skew lines will be the length of line perpendicular to both the lines $L_1$,$L_2$ and passing through $\bm{A}$ and $\bm{B}$.\par
-The shortest distance between the lines will be the projection of any line between the points on $L_1$,$L_2$ on to the unit vector which is perpendicular to both $L_1$,$L_2$.\par
-The unit vector perpendicular to lines \\
-\begin{align}
-    Line_1\colon \bm{x}=\bm{x_1}+\lambda_1\bm{b_1}\\
-    Line_2\colon \bm{x}=\bm{x_2}+\lambda_1\bm{b_2}
-\end{align}
-can be found by calculating
-\begin{align}
-    \frac{\bm{b_1}\times\bm{b_2}}{\norm{\bm{b_1}\times\bm{b_2}}}
-\end{align}
-In our question the value of $\bm{b_1}=\begin{pmatrix}1\\-1\\1\end{pmatrix}$ and $\bm{b_2}=\begin{pmatrix}2\\1\\2\end{pmatrix}$
-So the unit vector perpendicular to both $L_1$ and $L_2$ is
-\begin{align}
-    \bm{u}=\frac{\begin{pmatrix}1\\-1\\1\end{pmatrix}\times\begin{pmatrix}2\\1\\2\end{pmatrix}}{\norm{\begin{pmatrix}1\\-1\\1\end{pmatrix}\times\begin{pmatrix}2\\1\\2\end{pmatrix}}}=\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\0\\1\end{pmatrix}
-\end{align}
-The points $\bm{A}=\begin{pmatrix}1\\2\\1\end{pmatrix}$ and $\bm{B}=\begin{pmatrix}2\\-1\\-1\end{pmatrix}$ lie on the line $L_1$,$L_2$ respectively.\par
-The shortest distance between the lines is the absolute value of projection of the vector $\vec{B}-\vec{A}$ on to the unit vector $\bm{u}$.
-\begin{equation}
-    \norm{(\bm{B}-\bm{A})^T\bm{u}}\\
-    =\norm{\frac{1}{\sqrt{2}}\begin{pmatrix}1\\-3\\-2\end{pmatrix}^T\begin{pmatrix}-1\\0\\1\end{pmatrix}}\\
-    =\frac{3}{\sqrt{2}}
-\end{equation}
-Therefore the shortest distance between the given lines is $\frac{3}{\sqrt{2}}$
-\begin{center}
-    \includegraphics[width=12cm]{assignment2.jpg}
-\end{center}
 To find the points on the lines which make up the shortest distance we need to find $\lambda_1$ and $\lambda_2$ using the following expression\\
 \begin{align}
     \begin{pmatrix}\bm{b_1^T}\bm{b_1} & -\bm{b_1^T}\bm{b_2}\\\bm{b_2^T}\bm{b_1} &  -\bm{b_2^T}\bm{b_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\\lambda_2\end{pmatrix}=\begin{pmatrix}\bm{b_1^T}\bm{(x_2-x_1)}\\\bm{b_2^T}\bm{(x_2-x_1)}\end{pmatrix}\\
     \intertext{we know that\notag\\}
     \bm{x_1}=\begin{pmatrix}1\\2\\1\end{pmatrix},\bm{x_2}=\begin{pmatrix}2\\-1\\-1\end{pmatrix},\bm{b_1}=\begin{pmatrix}1\\-1\\1\end{pmatrix} and  \bm{b_2}=\begin{pmatrix}2\\1\\2\end{pmatrix}\notag
 \end{align}
-Using the above expression, we get the points as $\frac{1}{12}\begin{pmatrix}27\\-3\\27\end{pmatrix}$ and $\frac{1}{12}\begin{pmatrix}10\\-19\\-26\end{pmatrix}$ on the line $L_1$,$L_2$ respectively
+Using the above expression, we get the points as $\frac{1}{12}\begin{pmatrix}27\\-3\\27\end{pmatrix}$ and $\frac{1}{12}\begin{pmatrix}10\\-19\\-26\end{pmatrix}$ on the line $L_1$,$L_2$ respectively.\\
+The shortest distance between the lines is the absolute value of projection of the vector $\vec{B}-\vec{A}$ on to the unit vector $\bm{u}$.
+\begin{equation}
+    \norm{(\bm{B}-\bm{A})}\\
+    =\norm{\frac{1}{{12}}\begin{pmatrix}27\\-3\\27\end{pmatrix}-\frac{1}{{12}}\begin{pmatrix}10\\-19\\-26\end{pmatrix}}\\
+    =\frac{3}{\sqrt{2}}
+\end{equation}
+Therefore the shortest distance between the given lines is $\frac{3}{\sqrt{2}}$\\
+The unit vector perpendicular to lines \\
+\begin{align}
+    Line_1\colon \bm{x}=\bm{x_1}+\lambda_1\bm{b_1}\\
+    Line_2\colon \bm{x}=\bm{x_2}+\lambda_1\bm{b_2}
+\end{align}
+can be found by 
+\begin{align}
+    \frac{\frac{1}{{12}}\begin{pmatrix}27\\-3\\27\end{pmatrix}-\frac{1}{{12}}\begin{pmatrix}10\\-19\\-26\end{pmatrix}}{\norm{\frac{1}{{12}}\begin{pmatrix}27\\-3\\27\end{pmatrix}-\frac{1}{{12}}\begin{pmatrix}10\\-19\\-26\end{pmatrix}}}
+\end{align}
+So the unit vector perpendicular to both $L_1$ and $L_2$ is
+\begin{align}
+    \bm{n}=\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\0\\1\end{pmatrix}
+\end{align}
+
+\begin{center}
+    \includegraphics[width=11cm]{assignment2.jpg}
+\end{center}
 \end{document}
