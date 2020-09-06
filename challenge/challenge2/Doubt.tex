@@ -1,0 +1,116 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+
+\singlespacing
+
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}    
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{chngcntr}
+\DeclareMathOperator*{\Res}{Res}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+\newcommand{\bignorm}[1]{\Bigl \| #1 \Bigr \| #1}
+\newcommand{\norm}[1]{\| #1 \|}
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\newcommand{\myvect}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\begin{document}
+    \begin{center}
+    \huge Challenge 2\\
+    \large Shaik Zeeshan Ali\\
+    \large AI20MTECH11001\\
+    \end{center}
+\vspace{0.5cm}
+\begin{abstract}
+This document is to know the conditions where matrix multiplication can be commutative
+\end{abstract}
+\vspace{0.5cm}
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/Zeeshan-IITH/IITH-EE5609/new/master/codes
+\end{lstlisting}
+%
+and latex-tikz codes from 
+\begin{lstlisting}
+https://github.com/Zeeshan-IITH/IITH-EE5609
+\end{lstlisting}
+%
+\section{problem}
+The conditions when matrix multiplication can be commutative,especially where both the matrices are simultaneously diagonalizable.
+\section{explanation}
+Let $\bm{P}$ be an invertible matrix that can simultaneously diagonalize matrices $\bm{A}$ and $\bm{B}$.\\
+Let $\bm{P}$=\myvect{\bm{X_1} & \bm{X_2} ...& \bm{X_n}} where $\bm{X_1}$,$\bm{X_2}$ ..$\bm{X_n}$ are the eigen vectors.\\
+Then \\
+\begin{align}
+    \bm{A}\bm{X_1}=\lambda_a{_1}\bm{X_1},\bm{B}\bm{X_1}=\lambda_b{_1}\bm{X_1}\notag\\
+    \bm{A}\bm{X_2}=\lambda_a{_2}\bm{X_2},\bm{B}\bm{X_2}=\lambda_b{_2}\bm{X_2}\notag \intertext{ and so on}\notag\\
+    \bm{A}\bm{X_n}=\lambda_a{_n}\bm{X_n},\bm{B}\bm{X_1}=\lambda_b{_n}\bm{X_n}
+\end{align}
+But using the above equations we can write\\
+\begin{align}
+    \bm{A}(\bm{B}^{-1}\lambda_b{_1}\bm{X_1})=\lambda_a{_1}\bm{X_1}\notag\\
+    \bm{A}(\bm{B}^{-1}\lambda_b{_2}\bm{X_2})=\lambda_a{_2}\bm{X_2}\notag\\
+    \intertext{and so on}
+    \bm{A}(\bm{B}^{-1}\lambda_b{_n}\bm{X_n})=\lambda_a{_n}\bm{X_n}
+\end{align}
+Since $\bm{X_1},\bm{X_2}..\bm{X_n}$ are not zero matrices\\
+We can write\\
+\begin{align}
+    \lambda_b{_1}\bm{A}=\lambda_a{_1}\bm{B}\notag\\
+    \lambda_b{_2}\bm{A}=\lambda_a{_2}\bm{B}\notag\\
+    \intertext{and so on}\notag\\
+    \lambda_b{_n}\bm{A}=\lambda_a{_n}\bm{B}
+\end{align}
+Therefore this is possible only if \\
+\begin{align}
+    \frac{\lambda_a{_1}}{\lambda_b{_1}}=\frac{\lambda_a{_2}}{\lambda_b{_2}}=....=\frac{\lambda_a{_n}}{\lambda_b{_n}}
+    \intertext{and}\notag\\
+    \intertext{Matrix $\bm{A}$ is a scalar multiple of $\bm{B}$}\notag
+\end{align}
+\end{document}
