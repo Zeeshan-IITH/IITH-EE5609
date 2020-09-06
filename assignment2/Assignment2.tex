@@ -110,17 +110,23 @@ The above matrix has a $rank=3$ .Hence the lines do not intersect
 \section{solution}
 Let $\bm{A}$ be a point on line $L_1$ and $\bm{B}$ be point on the line $L_2$.Then the shortest distance between two skew lines will be the length of line perpendicular to both the lines $L_1$,$L_2$ and passing through $\bm{A}$ and $\bm{B}$.\par
 \vspace{5mm}
+The vector passing through $\bm{A}$ and $\bm{B}$ will be \\
+\begin{align}
+    \bm{A-B}=\bm{x_1-x_2}+\begin{pmatrix}\bm{v_1} & \bm{v_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\-\lambda_2\end{pmatrix}
+\end{align}
 The vectors $\bm{v_1}$,$\bm{v_2}$ are both perpendicular to the line $\bm{AB}$.So the dot product of $\bm{v_1}$,$\bm{v_2}$ with the line $\bm{AB}$ is zero.\\
 
 The dot product of $\bm{v_1}$ with the line $\bm{AB}$ is
 \begin{align}
+    \bm{v_1}^T(\brak\bm{A-B})=0\notag\\
     \bm{v_1^T}\begin{pmatrix}x_1 & \bm{v_1}\end{pmatrix}\begin{pmatrix}1 \\ \lambda_1\end{pmatrix}-\bm{v_1^T}\begin{pmatrix}x_2 & \bm{v_2}\end{pmatrix}\begin{pmatrix}1 \\ \lambda_2\end{pmatrix}=0
 \end{align}
 The dot product of $\bm{v_2}$ with the line $\bm{AB}$ is\\
 \begin{align}
+    \bm{v_2}^T(\brak\bm{A-B})=0\notag\\
     \bm{v_2^T}\begin{pmatrix}x_1 & \bm{v_1}\end{pmatrix}\begin{pmatrix}1 \\ \lambda_1\end{pmatrix}-\bm{v_2^T}\begin{pmatrix}x_2 & \bm{v_2}\end{pmatrix}\begin{pmatrix}1 \\ \lambda_2\end{pmatrix}=0
 \end{align}
-Rearranging the equations $(11)$ and $(12)$ in matrix form we get\\
+Rearranging the equations $(12)$ and $(13)$ in matrix form we get\\
 \begin{align}
     \begin{pmatrix}\bm{v_1^T}x_1 & \bm{v_1^T}\bm{v_1} & -\bm{v_1^T}x_2 & -\bm{v_1^T}\bm{v_2}\\\bm{v_2^T}x_1 & \bm{v_2^T}\bm{v_1} & -\bm{v_2^T}x_2 & -\bm{v_2^T}\bm{v_2}\end{pmatrix}\begin{pmatrix}1\\\lambda_1\\1\\\lambda_2\end{pmatrix}=0
 \end{align}
