@@ -112,33 +112,34 @@ Let $\bm{A}$ be a point on line $L_1$ and $\bm{B}$ be point on the line $L_2$.Th
 \vspace{5mm}
 The vector passing through $\bm{A}$ and $\bm{B}$ will be \\
 \begin{align}
-    \bm{A-B}=\bm{x_1-x_2}+\begin{pmatrix}\bm{v_1} & -\bm{v_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\\lambda_2\end{pmatrix}
+    \bm{A-B}=\bm{x_1-x_2}+\begin{pmatrix}\bm{m_1} & -\bm{m_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\\lambda_2\end{pmatrix}
 \end{align}
-The vectors $\bm{v_1}$,$\bm{v_2}$ are both perpendicular to the line $\bm{AB}$.So the dot product of $\bm{v_1}$,$\bm{v_2}$ with the line $\bm{AB}$ is zero.\\
+The vectors $\bm{m_1}$,$\bm{m_2}$ are both perpendicular to the line $\bm{AB}$.So the dot product of $\bm{m_1}$,$\bm{m_2}$ with the line $\bm{AB}$ is zero.\\
 
-The dot product of $\bm{v_1}$ with the line $\bm{AB}$ is
+The dot product of $\bm{m_1}$ with the line $\bm{AB}$ is
 \begin{align}
-    \bm{v_1}^T(\brak\bm{A-B})=0\notag\\
-    \bm{v_1^T}(\bm{x_1-x_2})+\bm{v_1^T}(\bm{v_1} & -\bm{v_2})\begin{pmatrix}\lambda_1 \\ \lambda_2\end{pmatrix}=0
+    \bm{m_1}^T(\brak\bm{A-B})=0\notag\\
+    \bm{m_1^T}(\bm{x_1-x_2})+\bm{m_1^T}(\bm{m_1} & -\bm{m_2})\begin{pmatrix}\lambda_1 \\ \lambda_2\end{pmatrix}=0
 \end{align}
-The dot product of $\bm{v_2}$ with the line $\bm{AB}$ is\\
+The dot product of $\bm{m_2}$ with the line $\bm{AB}$ is\\
 \begin{align}
-    \bm{v_2}^T(\brak\bm{A-B})=0\notag\\
-    \bm{v_1^T}(\bm{x_1-x_2})+\bm{v_2^T}(\bm{v_1} & -\bm{v_2})\begin{pmatrix}\lambda_1 \\ \lambda_2\end{pmatrix}=0
+    \bm{m_2}^T(\brak\bm{A-B})=0\notag\\
+    \bm{m_1^T}(\bm{x_1-x_2})+\bm{m_2^T}(\bm{m_1} & -\bm{m_2})\begin{pmatrix}\lambda_1 \\ \lambda_2\end{pmatrix}=0
 \end{align}
+\vspace{3mm}
 Combining the equations $(12)$ and $(13)$ in matrix form we get\\
 \begin{align}
-    \begin{pmatrix}\bm{v_1^T}\bm{v_1} & -\bm{v_1^T}\bm{v_2}\\\bm{v_2^T}\bm{v_1} &  -\bm{v_2^T}\bm{v_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\\lambda_2\end{pmatrix}+\begin{pmatrix}\bm{v_1^T}\bm{(x_1-x_2)}\\\bm{v_2^T}\bm{(x_1-x_2)}\end{pmatrix}=0
+    \begin{pmatrix}\bm{m_1^T}\bm{m_1} & -\bm{m_1^T}\bm{m_2}\\\bm{m_2^T}\bm{m_1} &  -\bm{m_2^T}\bm{m_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\\lambda_2\end{pmatrix}+\begin{pmatrix}\bm{m_1^T}\bm{(x_1-x_2)}\\\bm{m_2^T}\bm{(x_1-x_2)}\end{pmatrix}=0
 \end{align}
 simplifying it further\\
 \begin{align}
-    \begin{pmatrix}\bm{v_1^T}\bm{v_1} & -\bm{v_1^T}\bm{v_2}\\\bm{v_2^T}\bm{v_1} &  -\bm{v_2^T}\bm{v_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\\lambda_2\end{pmatrix}=\begin{pmatrix}\bm{v_1^T}\bm{(x_2-x_1)}\\\bm{v_2^T}\bm{(x_2-x_1)}\end{pmatrix}
+    \begin{pmatrix}\bm{m_1^T}\bm{m_1} & -\bm{m_1^T}\bm{m_2}\\\bm{m_2^T}\bm{m_1} &  -\bm{m_2^T}\bm{m_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\\lambda_2\end{pmatrix}=\begin{pmatrix}\bm{m_1^T}\bm{(x_2-x_1)}\\\bm{m_2^T}\bm{(x_2-x_1)}\end{pmatrix}
 \end{align}
 To find the points on the lines which make up the shortest distance we need to find $\lambda_1$ and $\lambda_2$ using the following expression\\
 \begin{align}
-    \begin{pmatrix}\bm{v_1^T}\bm{v_1} & -\bm{v_1^T}\bm{v_2}\\\bm{v_2^T}\bm{v_1} &  -\bm{v_2^T}\bm{v_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\\lambda_2\end{pmatrix}=\begin{pmatrix}\bm{v_1^T}\bm{(x_2-x_1)}\\\bm{v_2^T}\bm{(x_2-x_1)}\end{pmatrix}\\
+    \begin{pmatrix}\bm{m_1^T}\bm{m_1} & -\bm{m_1^T}\bm{m_2}\\\bm{m_2^T}\bm{m_1} &  -\bm{m_2^T}\bm{m_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\\lambda_2\end{pmatrix}=\begin{pmatrix}\bm{m_1^T}\bm{(x_2-x_1)}\\\bm{m_2^T}\bm{(x_2-x_1)}\end{pmatrix}\\
     \intertext{we know that\notag\\}
-    \bm{x_1}=\begin{pmatrix}1\\2\\1\end{pmatrix},\bm{x_2}=\begin{pmatrix}2\\-1\\-1\end{pmatrix},\bm{v_1}=\begin{pmatrix}1\\-1\\1\end{pmatrix} and  \bm{v_2}=\begin{pmatrix}2\\1\\2\end{pmatrix}\notag
+    \bm{x_1}=\begin{pmatrix}1\\2\\1\end{pmatrix},\bm{x_2}=\begin{pmatrix}2\\-1\\-1\end{pmatrix},\bm{m_1}=\begin{pmatrix}1\\-1\\1\end{pmatrix} and  \bm{m_2}=\begin{pmatrix}2\\1\\2\end{pmatrix}\notag
 \end{align}
 Using the above expression, we get the points as $\frac{1}{12}\begin{pmatrix}27\\-3\\27\end{pmatrix}$ and $\frac{1}{12}\begin{pmatrix}10\\-19\\-26\end{pmatrix}$ on the line $L_1$,$L_2$ respectively.\\
 The shortest distance between the lines is the absolute value of projection of the vector $\bm{AB}$ on to the unit vector $\bm{u}$.
@@ -150,8 +151,8 @@ The shortest distance between the lines is the absolute value of projection of t
 Therefore the shortest distance between the given lines is $\frac{3}{\sqrt{2}}$\\
 The unit vector perpendicular to lines \\
 \begin{align}
-    Line_1\colon \bm{x}=\bm{x_1}+\lambda_1\bm{v_1}\\
-    Line_2\colon \bm{x}=\bm{x_2}+\lambda_1\bm{v_2}
+    Line_1\colon \bm{x}=\bm{x_1}+\lambda_1\bm{m_1}\\
+    Line_2\colon \bm{x}=\bm{x_2}+\lambda_1\bm{m_2}
 \end{align}
 can be found by 
 \begin{align}
