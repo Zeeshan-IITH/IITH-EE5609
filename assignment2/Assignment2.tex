@@ -127,17 +127,21 @@ The dot product of $\bm{m_2}$ with the line $\bm{AB}$ is\\
     \bm{m_1^T}(\bm{x_1-x_2})+\bm{m_2^T}(\bm{m_1} & -\bm{m_2})\begin{pmatrix}\lambda_1 \\ \lambda_2\end{pmatrix}=0
 \end{align}
 \vspace{3mm}
-Combining the equations $(12)$ and $(13)$ in matrix form we get\\
+Let the matrix $\bm{M}$ be\\
 \begin{align}
-    \begin{pmatrix}\bm{m_1^T}\bm{m_1} & -\bm{m_1^T}\bm{m_2}\\\bm{m_2^T}\bm{m_1} &  -\bm{m_2^T}\bm{m_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\\lambda_2\end{pmatrix}+\begin{pmatrix}\bm{m_1^T}\bm{(x_1-x_2)}\\\bm{m_2^T}\bm{(x_1-x_2)}\end{pmatrix}=0
+    \bm{M}=\begin{pmatrix}\bm{m_1}^T\\\bm{m_2}^T\end{pmatrix}
+\end{align}
+Combining the equations $(12)$ and $(13)$ in matrix form,using equation $(14)$, we get\\
+\begin{align}
+    \bm{M}\bm{M}^T\begin{pmatrix}\lambda_1\\-\lambda_2\end{pmatrix}+\bm{M}\bm{(x_1-x_2)}=0
 \end{align}
 simplifying it further\\
 \begin{align}
-    \begin{pmatrix}\bm{m_1^T}\bm{m_1} & -\bm{m_1^T}\bm{m_2}\\\bm{m_2^T}\bm{m_1} &  -\bm{m_2^T}\bm{m_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\\lambda_2\end{pmatrix}=\begin{pmatrix}\bm{m_1^T}\bm{(x_2-x_1)}\\\bm{m_2^T}\bm{(x_2-x_1)}\end{pmatrix}
+    \bm{M}\bm{M}^T\begin{pmatrix}\lambda_1\\-\lambda_2\end{pmatrix}=\bm{M}\bm{(x_2-x_1)}
 \end{align}
 To find the points on the lines which make up the shortest distance we need to find $\lambda_1$ and $\lambda_2$ using the following expression\\
 \begin{align}
-    \begin{pmatrix}\bm{m_1^T}\bm{m_1} & -\bm{m_1^T}\bm{m_2}\\\bm{m_2^T}\bm{m_1} &  -\bm{m_2^T}\bm{m_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\\lambda_2\end{pmatrix}=\begin{pmatrix}\bm{m_1^T}\bm{(x_2-x_1)}\\\bm{m_2^T}\bm{(x_2-x_1)}\end{pmatrix}\\
+    \bm{M}\bm{M}^T\begin{pmatrix}\lambda_1\\-\lambda_2\end{pmatrix}=\bm{M}\bm{(x_2-x_1)}\notag\\
     \intertext{we know that\notag\\}
     \bm{x_1}=\begin{pmatrix}1\\2\\1\end{pmatrix},\bm{x_2}=\begin{pmatrix}2\\-1\\-1\end{pmatrix},\bm{m_1}=\begin{pmatrix}1\\-1\\1\end{pmatrix} and  \bm{m_2}=\begin{pmatrix}2\\1\\2\end{pmatrix}\notag
 \end{align}
