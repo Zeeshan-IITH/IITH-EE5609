@@ -53,6 +53,11 @@
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
 
 \lstset{
 frame=single, 
@@ -142,13 +147,13 @@ simplifying it further\\
 To find the points on the lines which make up the shortest distance we need to find $\lambda_1$ and $\lambda_2$ using the above expression to get the augmented form\\
 \begin{align}
     \begin{pmatrix}\bm{m_1}^T\bm{m_1} & \bm{m_1}^T\bm{m_2}\\\bm{m_2}^T\bm{m_1} & \bm{m_2}^T\bm{m_2}\end{pmatrix}\begin{pmatrix}\lambda_1\\-\lambda_2\end{pmatrix}=\begin{pmatrix}\bm{m_1}^T\bm{(x_2-x_1)}\\\bm{m_2}^T\bm{(x_2-x_1)}\end{pmatrix}\\
-    \begin{pmatrix}\bm{m_1}^T\bm{m_1} & \bm{m_1}^T\bm{m_2} & \bm{m_1}^T\bm{(x_2-x_1)}\\\bm{m_2}^T\bm{m_1} & \bm{m_2}^T\bm{m_2} & \bm{m_2}^T\bm{(x_2-x_1)}\end{pmatrix}\\
+    \begin{amatrix}{2}\bm{m_1}^T\bm{m_1} & \bm{m_1}^T\bm{m_2} & \bm{m_1}^T\bm{(x_2-x_1)}\\\bm{m_2}^T\bm{m_1} & \bm{m_2}^T\bm{m_2} & \bm{m_2}^T\bm{(x_2-x_1)}\end{amatrix}\\
     \intertext{we know that\notag\\}
     \bm{x_1}=\begin{pmatrix}1\\2\\1\end{pmatrix},\bm{x_2}=\begin{pmatrix}2\\-1\\-1\end{pmatrix},\bm{m_1}=\begin{pmatrix}1\\-1\\1\end{pmatrix} and  \bm{m_2}=\begin{pmatrix}2\\1\\2\end{pmatrix}\notag
     \intertext{so the augmented matrix will be}\\
-    \begin{pmatrix}3 & 3 &2\\ 3 & 9 & -5\end{pmatrix}
+    \begin{amatrix}{2}3 & 3 &2\\ 3 & 9 & -5\end{amatrix}
     \intertext{Using row reduction $\bm{R_2}=\bm{R_2}-{R_1}$, we get}
-    \begin{pmatrix}3 & 3 &2\\ 0 & 6 & -7\end{pmatrix}
+    \begin{amatrix}{2}3 & 3 &2\\ 0 & 6 & -7\end{amatrix}
 \end{align}
 \vspace{5mm}
 So the values of $\lambda_1=\frac{11}{6}$ and $\lambda_2=\frac{7}{6}$\\
