@@ -137,27 +137,26 @@ columns=fullflexible
 \begin{document}
 
 \begin{center}
-\huge Assignment 2\\
+\huge Assignment 2
 
 \large Shaik Zeeshan Ali\\
-\large AI20MTECH11001\\
+AI20MTECH11001
 \end{center}
 \begin{abstract}
 This document explains how to find the shortest distance between two lines if and when the two lines are not intersecting with each other.
 \end{abstract}
-\vspace{0.5cm}
 Download all python codes from 
 \begin{lstlisting}
 https://github.com/Zeeshan-IITH/IITH-EE5609/new/master/codes
 \end{lstlisting}
-%
+
 and latex-tikz codes from 
 \begin{lstlisting}
 https://github.com/Zeeshan-IITH/IITH-EE5609
 \end{lstlisting}
 
 \section{Problem}
-Find the shortest distance between the lines \\
+Find the shortest distance between the lines 
 \begin{align}
     L_1\colon \vec{x}=\myvec{1\\2\\1}+\lambda_1\myvec{1\\-1\\1}\\
     L_2\colon \vec{x}=\myvec{2\\-1\\-1}+\lambda_2\myvec{2\\1\\2}
@@ -180,23 +179,23 @@ If the two line intersect then (2.0.1)=(2.0.2) i.e.
 \end{align}
 The above matrix has a $rank=3$ .Hence the lines do not intersect.
 \section{solution}
-Let $\vec{A}$ be a point on line $L_1$ and $\vec{B}$ be point on the line $L_2$.Then the shortest distance between two skew lines will be the length of line perpendicular to both the lines $L_1$,$L_2$ and passing through $\vec{A}$ and $\vec{B}$.\par
-The vector passing through $\vec{A}$ and $\vec{B}$ will be \\
+Let $A$ be a point on line $L_1$ and $B$ be point on the line $L_2$.Then the shortest distance between two skew lines will be the length of line perpendicular to both the lines $L_1$,$L_2$ and passing through $A$ and $B$.\par
+The vector passing through the points $A$ and $B$ will be
 \begin{align}
     \vec{A-B}=\vec{x_1-x_2}+\myvec{\vec{m_1} & -\vec{m_2}}\myvec{\lambda_1\\\lambda_2}
 \end{align}
-The vectors $\vec{m_1}$,$\vec{m_2}$ are both perpendicular to the line $\vec{AB}$.So the dot product of $\vec{m_1}$,$\vec{m_2}$ with the line $\vec{AB}$ is zero.\par
-The dot product of $\vec{m_1}$ with the line $\vec{AB}$ is
+The vectors $\vec{m_1}$,$\vec{m_2}$ are both perpendicular to the line ${AB}$.So the dot product of $\vec{m_1}$,$\vec{m_2}$ with the line ${AB}$ is zero.\par
+The dot product of $\vec{m_1}$ with the line ${AB}$ is
 \begin{align}
     \vec{m_1}^T\brak{\vec{A-B}}=0\\
     \vec{m_1^T}(\vec{x_1-x_2})+\vec{m_1^T}(\vec{m_1} & -\vec{m_2})\begin{pmatrix}\lambda_1 \\ \lambda_2\end{pmatrix}=0
 \end{align}
-The dot product of $\vec{m_2}$ with the line $\vec{AB}$ is\\
+The dot product of $\vec{m_2}$ with the line ${AB}$ is
 \begin{align}
     \vec{m_2}^T\brak{\vec{A-B}}=0\\
     \vec{m_1^T}(\vec{x_1-x_2})+\vec{m_2^T}(\vec{m_1} & -\vec{m_2})\myvec{\lambda_1 \\ \lambda_2}=0
 \end{align}
-Let the matrix $\vec{M}$ be\\
+Let the matrix $\vec{M}$ be
 \begin{align}
     \vec{M}=\myvec{\vec{m_1}^T\\\vec{m_2}^T}
 \end{align}
@@ -204,11 +203,11 @@ Combining the equations $(3.0.3)$ and $(3.0.5)$ in matrix form,using equation $(
 \begin{align}
     \vec{M}\vec{M}^T\myvec{\lambda_1\\-\lambda_2}+\vec{M}\vec{(x_1-x_2)}=0
 \end{align}
-simplifying it further\\
+simplifying it further
 \begin{align}
     \vec{M}\vec{M}^T\begin{pmatrix}\lambda_1\\-\lambda_2\end{pmatrix}=\vec{M}\vec{(x_2-x_1)}
 \end{align}
-To find the points on the lines which make up the shortest distance we need to find $\lambda_1$ and $\lambda_2$ using the above expression to get the augmented form\\
+To find the points on the lines which make up the shortest distance we need to find $\lambda_1$ and $\lambda_2$ using the above expression to get the augmented form
 \begin{align}
     \myvec{\vec{m_1}^T\vec{m_1} & \vec{m_1}^T\vec{m_2}\\\vec{m_2}^T\vec{m_1} & \vec{m_2}^T\vec{m_2}}\myvec{\lambda_1\\-\lambda_2}=\myvec{\vec{m_1}^T\vec{(x_2-x_1)}\\\vec{m_2}^T\vec{(x_2-x_1)}}\\
     \begin{amatrix}{2}\vec{m_1}^T\vec{m_1} & \vec{m_1}^T\vec{m_2} & \vec{m_1}^T\vec{(x_2-x_1)}\\\vec{m_2}^T\vec{m_1} & \vec{m_2}^T\vec{m_2} & \vec{m_2}^T\vec{(x_2-x_1)}\end{amatrix}\\
@@ -221,7 +220,7 @@ To find the points on the lines which make up the shortest distance we need to f
 \end{align}
 So the values are $\lambda_1=\frac{11}{6}$ and $\lambda_2=\frac{7}{6}$.
 Using the equation (1.0.1) and (1.0.2), we get the points as $\frac{1}{6}\myvec{17\\1\\17}$ and $\frac{1}{6}\myvec{26\\1\\8}$ on the line $L_1$,$L_2$ respectively.\par
-The shortest distance between the lines is the absolute value of projection of the vector $\vec{AB}$ on to the unit vector $\vec{n}$.
+The shortest distance between the lines is the distance between the points $A$ and $B$.
 \begin{equation}
     \norm{(\vec{B}-\vec{A})}\\
     =\norm{\frac{1}{{6}}\myvec{17\\1\\17}-\frac{1}{{6}}\myvec{26\\1\\8}}\\
@@ -239,16 +238,16 @@ can be found by
     \frac{\vec{A-B}}{\norm{\vec{A-B}}}\\
     \frac{\frac{1}{{6}}\myvec{17\\1\\17}-\frac{1}{{6}}\myvec{26\\1\\8}}{\frac{3}{\sqrt{2}}}\notag
 \end{align}
-\begin{figure}
+
+So the unit vector perpendicular to both $L_1$ and $L_2$ is
+\begin{align}
+    \vec{n}=\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\0\\1\end{pmatrix}
+\end{align}
+\begin{figure}[!]
 \begin{center}
     \includegraphics[width=11cm]{assignment2.jpg}
     \caption{This is the plot of the given skew lines and the blue line indicates the normal to the given lines}
     \label{Skew_lines}
 \end{center}
 \end{figure}
-So the unit vector perpendicular to both $L_1$ and $L_2$ is
-\begin{align}
-    \vec{n}=\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\0\\1\end{pmatrix}
-\end{align}
-
 \end{document}
