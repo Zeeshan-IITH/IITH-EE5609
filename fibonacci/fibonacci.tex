@@ -179,7 +179,7 @@ Now to calculate
     \bm{A}^n\notag \intertext{we can use}\notag\\
     \bm{A}^n=b_k\bm{A}^{2^k}+b_k{_-}{_1}\bm{A}^{2^k{^-}{^1}}+b_k{_-}{_2}\bm{A}^{2^k{^-}{^2}}...+b_2\bm{A}^4+b_1\bm{A}^2+b_0\bm{A}
 \end{align}
-Now each of the $\bm{A}^{2^k}$ can be calculated by squaring the previous $\bm{A}^{2^k{^-}{^1}}$.Neglecting matrix addition as it only takes $n^2$ time to compute when comared to $n^3$ time of each multiplication, we can say that since $\bm{A}^{2^k}$ caluculation takes $O(\log_2 n)$ time,the whole computation $\bm{A}^n$ takes $O(\log_2 n)$.
+Now each of the $\bm{A}^{2^k}$ can be calculated by squaring the previous $\bm{A}^{2^k{^-}{^1}}$.Neglecting matrix addition as it only takes $m^2$ time to compute when compared to $m^3$ time of each multiplication,where m is the order of the square matrix, we can say that since $\bm{A}^{2^k}$ calculation takes $O(\log_2 n)$ time,the whole computation $\bm{A}^n$ takes $O(\log_2 n)$.
 \section{Fibonacci}
 Consider the special matrix which begins with fibonacci numbers in it
 \begin{align}
