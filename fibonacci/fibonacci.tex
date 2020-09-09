@@ -137,13 +137,13 @@ columns=fullflexible
 \begin{document}
 
 \begin{center}
-\huge Fibonacci numbers\\
+\huge Assignment 2
 
 \large Shaik Zeeshan Ali\\
-\large AI20MTECH11001\\
+AI20MTECH11001
 \end{center}
 \begin{abstract}
-This document depicts a way to setup a matrix equation to find the fibonacci sequence.
+This document explains how to find the shortest distance between two lines if and when the two lines are not intersecting with each other.
 \end{abstract}
 Download all python codes from 
 \begin{lstlisting}
@@ -154,40 +154,103 @@ and latex-tikz codes from
 \begin{lstlisting}
 https://github.com/Zeeshan-IITH/IITH-EE5609
 \end{lstlisting}
+
 \section{Problem}
-Given a $kxk$ matrix $\vec{A}$,find the powers of $\vec{A}^n$ within $O(log n)$ time.
-\section{Construction}
-For the sake of simplicity we will be calculating the powers given $n=2^m$, where $n$ is much larger than $k$.The required result will be of the form $\vec{A}^1,\vec{A}^2,\vec{A}^4,\vec{A}^8,\vec{A}^1{^6}$..
+Find the shortest distance between the lines 
 \begin{align}
-    \intertext{The first matrix multiplication will be}\notag\\
-    \vec{A}^2=\vec{A}\vec{A}
-    \intertext{Instead of using repeated multiplication by $\vec{A}$,we can use the previous result and square it to be closer to the result using less complutations}\notag\\
-    \vec{A}^4=\vec{A}^2\vec{A}^2\\
-    \vec{A}^8=\vec{A}^4\vec{A}^4\\
-    \vec{A}^1{^6}=\vec{A}^8\vec{A}^8\\
-    \intertext{So $\vec{A}^{2^m}$ need only m products of the resultant matrix from the previous computation.Since $m=log_2(n)$, the result can be computed in $O(log_2n)$ time.}\notag
+    L_1\colon \vec{x}=\myvec{1\\2\\1}+\lambda_1\myvec{1\\-1\\1}\\
+    L_2\colon \vec{x}=\myvec{2\\-1\\-1}+\lambda_2\myvec{2\\1\\2}
 \end{align}
-As a more general case any number $n$ can be represented as a sum of powers of $2$, just like binary numbers are represented with the radix 2 i.e when we represent $n$ in binary form we get
+\section{construction}
+When two lines are not intersecting the distance between them is non-zero.The equation of above mentioned lines in symmetric form is
 \begin{align}
-    n=b_kb_k{_-}{_1}b_k{_-}{_2}...b_0
-    \intertext{where}\notag
-    k=\log_2 n
+    L_1\colon x-1=2-y=z-1\\
+    L_2\colon \frac{x-2}{2}=y+1=\frac{z+1}{2}
 \end{align}
-because we require that many number of bits to represent $n$.\par
-Now to calculate
+The above line equations have no point of intersection as for no value of $\lambda_1,\lambda_2$ both the equations (2.0.1) and (2.0.2) are equal.\par
+If the two line intersect then (2.0.1)=(2.0.2) i.e.
 \begin{align}
-    \bm{A}^n\notag \intertext{we can use}\notag\\
-    \bm{A}^n=b_k\bm{A}^{2^k}+b_k{_-}{_1}\bm{A}^{2^k{^-}{^1}}+b_k{_-}{_2}\bm{A}^{2^k{^-}{^2}}...+b_2\bm{A}^4+b_1\bm{A}^2+b_0\bm{A}
+    \myvec{1\\2\\1}+\lambda_1\myvec{1\\-1\\1}=\myvec{2\\-1\\-1}+\lambda_2\myvec{2\\1\\2}\\
+    \lambda_1\myvec{1\\-1\\1}-\lambda_2\myvec{2\\1\\2}=\myvec{1\\-3\\-2}\\
+    \myvec{1 & -2\\-1 & -1\\1 & -2}\myvec{\lambda_1\\\lambda_2}=\myvec{1\\-3\\-2}\\
+    \intertext{The Augmented matrix will be}
+    \myvec{1 & -2 & 1\\-1 & -1 & -3\\1 & -2 & -2}\\
+    \myvec{1 & -2 & 1\\-1 & -1 & -3\\1 & -2 & -2}\xleftrightarrow{R_1=R_1-R_2}\myvec{0 & 0 & 3\\-1 & -1 & -3\\1 & -2 & -2}
 \end{align}
-Now each of the $\bm{A}^{2^k}$ can be calculated by squaring the previous $\bm{A}^{2^k{^-}{^1}}$.Neglecting matrix addition as it only takes $m^2$ time to compute when compared to $m^3$ time of each multiplication,where m is the order of the square matrix, we can say that since $\bm{A}^{2^k}$ calculation takes $O(\log_2 n)$ time,the whole computation $\bm{A}^n$ takes $O(\log_2 n)$.
-\section{Fibonacci}
-Consider the special matrix which begins with fibonacci numbers in it
+The above matrix has a $rank=3$ .Hence the lines do not intersect.
+\section{solution}
+Let $A$ be a point on line $L_1$ and $B$ be point on the line $L_2$.Then the shortest distance between two skew lines will be the length of line perpendicular to both the lines $L_1$,$L_2$ and passing through $A$ and $B$.\par
+The vector passing through the points $A$ and $B$ will be
 \begin{align}
-    \vec{F}=\myvec{1 & 1\\1 & 0}
-    \intertext{This matrix has the fibonaci numbers as its elements}
-    \vec{F^2}=\myvec{2 & 1\\1 & 0}\\
-    \vec{F^3}=\myvec{3 & 2\\2 & 1}
-    \intertext{Therefore the $n^t{^h}$ fibonacci number $F_n$ is the element in the first row,first column of $\vec{F^n{^-}{^1}}$,where $n\geq2$.The general form will be}
-    \vec{F^n{^-}{^1}}=\myvec{F_n & F_n{_-{_1}}\\F_n{_-{_2}} & F_n{_-}{_3}}
+    \vec{A-B}=\vec{x_1-x_2}+\myvec{\vec{m_1} & -\vec{m_2}}\myvec{\lambda_1\\\lambda_2}
 \end{align}
+The vectors $\vec{m_1}$,$\vec{m_2}$ are both perpendicular to the line ${AB}$.So the dot product of $\vec{m_1}$,$\vec{m_2}$ with the line ${AB}$ is zero.\par
+The dot product of $\vec{m_1}$ with the line ${AB}$ is
+\begin{align}
+    \vec{m_1}^T\brak{\vec{A-B}}=0\\
+    \vec{m_1^T}(\vec{x_1-x_2})+\vec{m_1^T}(\vec{m_1} & -\vec{m_2})\begin{pmatrix}\lambda_1 \\ \lambda_2\end{pmatrix}=0
+\end{align}
+The dot product of $\vec{m_2}$ with the line ${AB}$ is
+\begin{align}
+    \vec{m_2}^T\brak{\vec{A-B}}=0\\
+    \vec{m_1^T}(\vec{x_1-x_2})+\vec{m_2^T}(\vec{m_1} & -\vec{m_2})\myvec{\lambda_1 \\ \lambda_2}=0
+\end{align}
+Let the matrix $\vec{M}$ be
+\begin{align}
+    \vec{M}=\myvec{\vec{m_1}^T\\\vec{m_2}^T}
+\end{align}
+Combining the equations $(3.0.3)$ and $(3.0.5)$ in matrix form,using equation $(3.0.6)$, we get
+\begin{align}
+    \vec{M}\vec{M}^T\myvec{\lambda_1\\-\lambda_2}+\vec{M}\vec{(x_1-x_2)}=0
+\end{align}
+simplifying it further
+\begin{align}
+    \vec{M}\vec{M}^T\begin{pmatrix}\lambda_1\\-\lambda_2\end{pmatrix}=\vec{M}\vec{(x_2-x_1)}
+\end{align}
+To find the points on the lines which make up the shortest distance we need to find $\lambda_1$ and $\lambda_2$ using the above expression to get the augmented form
+\begin{align}
+    \myvec{\vec{m_1}^T\vec{m_1} & \vec{m_1}^T\vec{m_2}\\\vec{m_2}^T\vec{m_1} & \vec{m_2}^T\vec{m_2}}\myvec{\lambda_1\\-\lambda_2}=\myvec{\vec{m_1}^T\vec{(x_2-x_1)}\\\vec{m_2}^T\vec{(x_2-x_1)}}\\
+    \myvec{\vec{m_1}^T\vec{m_1} & \vec{m_1}^T\vec{m_2} & \vec{m_1}^T\vec{(x_2-x_1)}\\\vec{m_2}^T\vec{m_1} & \vec{m_2}^T\vec{m_2} & \vec{m_2}^T\vec{(x_2-x_1)}}\\
+    \intertext{we know that}
+    \vec{x_1}=\myvec{1\\2\\1},\vec{x_2}=\myvec{2\\-1\\-1},\vec{m_1}=\myvec{1\\-1\\1} and  \vec{m_2}=\myvec{2\\1\\2}\notag
+    \intertext{so the augmented matrix will be}
+    \myvec{{2}3 & 3 &2\\ 3 & 9 & -5}
+    \intertext{Using row reduction method to get row-reduced echelon form, we get}
+    \myvec{23 & 3 &2\\ 3 & 9 & -5}\xleftrightarrow{R_2=R_2-R_1}\myvec{3 & 3 &2\\ 0 & 6 & -7}\\
+    \myvec{3 & 3 &2\\ 0 & 6 & -7}\xleftrightarrow{R_1=2R_1-R_2}\myvec{6 & 0 & 11\\ 0 & 6 & -7}\\
+    \myvec{6 & 0 & 11\\ 0 & 6 & -7}\xleftrightarrow{R_1=\frac{R_1}{6},R_2=\frac{R_2}{6}}\myvec{1 & 0 & \frac{11}{6}\\ 0 & 1 & \frac{-7}{6}}\\
+    \text{So the values are }
+    \lambda_1=\frac{11}{6} \text{ and }\lambda_2=\frac{7}{6}\\
+    \intertext{Using the equation (1.0.1) and (1.0.2), we get the points as }\frac{1}{6}\myvec{17\\1\\17} \text{and} \frac{1}{6}\myvec{26\\1\\8} \text{on the line $L_1$,$L_2$ respectively}\notag
+\end{align}
+The shortest distance between the lines is the distance between the points $A$ and $B$.
+\begin{equation}
+    \norm{(\vec{B}-\vec{A})}\\
+    =\norm{\frac{1}{{6}}\myvec{17\\1\\17}-\frac{1}{{6}}\myvec{26\\1\\8}}\\
+    =\frac{3}{\sqrt{2}}
+\end{equation}
+Therefore the shortest distance between the given lines is $\frac{3}{\sqrt{2}}$.\par
+
+The unit vector perpendicular to lines
+\begin{align}
+    Line_1\colon \vec{x}=\vec{x_1}+\lambda_1\vec{m_1}\\
+    Line_2\colon \vec{x}=\vec{x_2}+\lambda_1\vec{m_2}
+\end{align}
+can be found by 
+\begin{align}
+    \frac{\vec{A-B}}{\norm{\vec{A-B}}}\\
+    \frac{\frac{1}{{6}}\myvec{17\\1\\17}-\frac{1}{{6}}\myvec{26\\1\\8}}{\frac{3}{\sqrt{2}}}\notag
+\end{align}
+
+So the unit vector perpendicular to both $L_1$ and $L_2$ is
+\begin{align}
+    \vec{n}=\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\0\\1\end{pmatrix}
+\end{align}
+\begin{figure}[!]
+\begin{center}
+    \includegraphics[width=11cm]{assignment2.jpg}
+    \caption{This is the plot of the given skew lines and the blue line indicates the normal to the given lines}
+    \label{Skew_lines}
+\end{center}
+\end{figure}
 \end{document}
