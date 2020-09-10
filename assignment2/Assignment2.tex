@@ -214,15 +214,13 @@ To find the points on the lines which make up the shortest distance we need to f
     \intertext{we know that}
     \vec{x_1}=\myvec{1\\2\\1},\vec{x_2}=\myvec{2\\-1\\-1},\vec{m_1}=\myvec{1\\-1\\1} and  \vec{m_2}=\myvec{2\\1\\2}\notag
     \intertext{so the augmented matrix will be}
-    \myvec{{2}3 & 3 &2\\ 3 & 9 & -5}
-    \intertext{Using row reduction method to get row-reduced echelon form, we get}
-    \myvec{23 & 3 &2\\ 3 & 9 & -5}\xleftrightarrow{R_2=R_2-R_1}\myvec{3 & 3 &2\\ 0 & 6 & -7}\\
+    \myvec{3 & 3 &2\\ 3 & 9 & -5}\\
+    \myvec{3 & 3 &2\\ 3 & 9 & -5}\xleftrightarrow{R_2=R_2-R_1}\myvec{3 & 3 &2\\ 0 & 6 & -7}\\
     \myvec{3 & 3 &2\\ 0 & 6 & -7}\xleftrightarrow{R_1=2R_1-R_2}\myvec{6 & 0 & 11\\ 0 & 6 & -7}\\
     \myvec{6 & 0 & 11\\ 0 & 6 & -7}\xleftrightarrow{R_1=\frac{R_1}{6},R_2=\frac{R_2}{6}}\myvec{1 & 0 & \frac{11}{6}\\ 0 & 1 & \frac{-7}{6}}\\
-    \text{So the values are }
-    \lambda_1=\frac{11}{6} \text{ and }\lambda_2=\frac{7}{6}\\
-    \intertext{Using the equation (1.0.1) and (1.0.2), we get the points as }\frac{1}{6}\myvec{17\\1\\17} \text{and} \frac{1}{6}\myvec{26\\1\\8} \text{on the line $L_1$,$L_2$ respectively}\notag
+    \lambda_1=\frac{11}{6},\lambda_2=\frac{7}{6}
 \end{align}
+Using the equation (1.0.1) and (1.0.2), we get the points as $A=\frac{1}{6}\myvec{17\\1\\17}$ and $B=\frac{1}{6}\myvec{26\\1\\8}$ on the line $L_1$,$L_2$ respectively.
 The shortest distance between the lines is the distance between the points $A$ and $B$.
 \begin{equation}
     \norm{(\vec{B}-\vec{A})}\\
