@@ -1,4 +1,4 @@
-  \documentclass[journal,12pt,twocolumn]{IEEEtran}
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
 %
 \usepackage{setspace}
 \usepackage{gensymb}
@@ -156,34 +156,34 @@ https://github.com/Zeeshan-IITH/IITH-EE5609
 \end{lstlisting}
 \section{problem}
 A finite-length discrete-time signal is basically a sequence, say, $\left(x_0,…,x_m{_1}\right)$ which can be written as an m-length vector $vec{x}\in R^m$.\par
-Given two periodic signals $\brak{x_0,…,x_n−1}$ and $\left(h_0,…,h_n−1\right)$, the circular convolution of the two signals is of length  $2n−1$, defined as
+Given two periodic signals $\brak{x_0,…,x_n−1}$ and $\left(h_0,…,h_n−1\right)$, the circular convolution of the two signals is of length  $n$, defined as
 \begin{align}
     y\brak{t}=\brak{h\oast x}_t=\sum_{\tau=0}^{\tau=n-1} x_{\tau} h_\brak{t-\tau}mod n\label{eq:1}\\
-    0\leq t < 2n-1\notag
+    0\leq t < n-1\notag
 \end{align}
 \section{construction}
 Circular convolution is a special case of convolution where the summation is truncated to a non-zero periodic interval and the actual signal is just a periodic repetition of the circular convolution.\par
-The time period of the two discrete signals be $n$,then the resultant convolution is also discrete periodic signal with a time period $2n-1$.par
-The signal $\vec{Y}$ contains $2n-1$ elements.
+The time period of the two discrete signals be $n$,then the resultant convolution is also discrete periodic signal with a time period $n$.par
+The signal $\vec{Y}$ contains $n$ elements.
 \begin{align}
-    Y=\myvec{y_0\\y_1\\.\\.\\y_{2n-2}}
+    Y=\myvec{y_0\\y_1\\.\\.\\y_{n-1}}
     \intertext{where}
-    y_{t_0}=\sum_{\tau=0}^{\tau=n-1} x_{\tau} h_\brak{t_0-\tau}
+    y_{t}=\sum_{\tau=0}^{\tau=n-1} x_{\tau} h_\brak{t-\tau}mod n
     \intertext{Therefore}
-    Y=\myvec{h_0x_0\\h_1x_0+h_0x_1\\h_0x_2+h_1x_1+h_2x_0\\.\\.\\h_{n-1}x_0+h_{n-2}x_1+...h_0x_{n-1}\\.\\h_{n-1}x_0+h_{n-2}x_1+...h_{0}x_{n-1}\\h_{n-1}x_1+h_{n-2}x_2+...h_{1}x_{n-1}\\.\\.\\h_{n-2}x_{n-1}+h_{n-1}x_{n-2}\\h_{n-1}x_{n-1}}
+    Y=\myvec{h_0x_0+h_{n-1}x_1...+h_1x_{n-1}\\h_1x_0+h_0x_1+...+h_2x_{n-1}\\h_2x_0+h_1x_1+...+h_3x_{n-1}\\.\\.\\h_{n-1}x_0+h_{n-2}x_1+...h_0x_{n-1}}
 \end{align}
 \section{Explanation}
 Simplifying
 \begin{align}
-    Y=\myvec{h_0&0&0&.&.&0&0\\h_1&h_0&0&.&.&0&0\\h_2&h_1&h_0&.&.&0&0\\.&.&.&.&.&.&.\\h_{n-1}&h_{n-2}&h_{n-3}&.&.&h_1&h_0\\0&h_{n-1}&h_{n-2}&.&.&h_2&h_1\\0&0&h_{n-1}&.&.&h_3&h_2\\.&.&.&.&.&.&.\\0&0&0&.&.&0&h_{n-1}}\myvec{x_0\\x_1\\x_2.\\.\\.\\x_{n-1}}
+    Y=\myvec{h_0&h_{n-1}&h_{n-2}&.&.&h_2&h_1\\h_1&h_0&h_{n-1}&.&.&h_3&h_2\\h_2&h_1&h_0&.&.&h_4&h_3\\.&.&.&.&.&.&.\\.&.&.&.&.&.&.\\h_{n-1}&h_{n-2}&h_{n-3}&.&.&h_1&h_0}\myvec{x_0\\x_1\\x_2.\\.\\.\\x_{n-1}}
 \end{align}
 Therefore we can write equation \eqref{eq:1} in matrix form as $\vec{Y}=\vec{H}\vec{X}$ where
 \begin{align}
-    \vec{H}=\myvec{h_0&0&0&.&.&0&0\\h_1&h_0&0&.&.&0&0\\h_2&h_1&h_0&.&.&0&0\\.&.&.&.&.&.&.\\h_{n-1}&h_{n-2}&h_{n-3}&.&.&h_1&h_0\\0&h_{n-1}&h_{n-2}&.&.&h_2&h_1\\0&0&h_{n-1}&.&.&h_3&h_2\\.&.&.&.&.&.&.\\0&0&0&.&.&0&h_{n-1}}
+    \vec{H}=\myvec{h_0&h_{n-1}&h_{n-2}&.&.&h_2&h_1\\h_1&h_0&h_{n-1}&.&.&h_3&h_2\\h_2&h_1&h_0&.&.&h_4&h_3\\.&.&.&.&.&.&.\\.&.&.&.&.&.&.\\h_{n-1}&h_{n-2}&h_{n-3}&.&.&h_1&h_0}
 \end{align}
-$\vec{H}$ is a matrix of dimension $(2n-1)\times n$.Since the actual signal is a periodic repitition of Each term of the signal $\vec{Y}$ can be written as
+$\vec{H}$ is a matrix of dimension $n\times n$.Since the actual signal is a periodic repetition of Each term of the signal $\vec{Y}$ can be written as
 \begin{align}
-    y_k=y_\brak{kmod(2n-1)}
+    y_k=y_{(k\mod n)}
 \end{align}
-Where each term $y_0,y_1...y_{2n-2}$ are derived from the circular convolution.
+Where each term $y_0,y_1...y_{n-1}$ are derived from the circular convolution.
 \end{document}
