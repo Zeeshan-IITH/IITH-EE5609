@@ -195,5 +195,17 @@ Because $\vec{H_1},\vec{H_2}$ are in toeplitz form,their difference is also in t
     \vec{H}=\vec{H_1}-\vec{H_2}\\
     \vec{H}=\myvec{h_0&0&0&.&.&0&0\\h_1&h_0&0&.&.&0&0\\h_2&h_1&h_0&.&.&0&0\\.&.&.&.&.&.&.\\h_{m-2}&h_{m-3}&.&.&h_{1}&h_{0}&0\\h_{m-1}&h_{m-2}&h_{m-3}&.&.&h_{1}&h_{0}\\0&h_{m-1}&h_{m-2}&.&.&h_{2}&h_{1}\\0&0&h_{m-1}&.&.&h_{3}&h_{2}\\.&.&.&.&.&.&.\\0&0&0&.&.&0&h_{m-1}}
 \end{align}
-The solution for $LX=0$ or $UX=0$ when $X\neq 0$, is that each of the elements of the matrices $L,U$ is zero.So, $\vec{H_1}-\vec{H_2}=0$ which means $\vec{H_1}=\vec{H_2}$
+Suppose \begin{align}
+    L=\myvec{h_0&0&0&.&.&0&0\\h_1&h_0&0&.&.&0&0\\h_2&h_1&h_0&.&.&0&0\\.&.&.&.&.&.&.\\h_{n-2}&h_{n-3}&.&.&h_{1}&h_{0}&0\\h_{n-1}&h_{n-2}&h_{n-3}&.&.&h_{1}&h_{0}}\label{eq:4}\\
+    LX=0
+\end{align}
+For $LX=0$ to have a non-trivial solution i.e nullity$\neq 0$, the rank of the matrix $R(L) < n$, which implies $h_0=0$.So,rank($L$)=0.
+Similarly if you consider the submatrix of $L$ 
+\begin{align}
+    L=\myvec{h_1&0&0&.&.&0&0\\h_2&h_1&0&.&.&0&0\\h_3&h_2&h_1&.&.&0&0\\.&.&.&.&.&.&.\\h_{n-2}&h_{n-3}&.&.&h_{2}&h_{2}&0\\h_{n-1}&h_{n-2}&h_{n-3}&.&.&h_{2}&h_{1}}\label{eq:5}
+    \intertext{where}
+    \myvec{h_1&0&0&.&.&0&0\\h_2&h_1&0&.&.&0&0\\h_3&h_2&h_1&.&.&0&0\\.&.&.&.&.&.&.\\h_{n-2}&h_{n-3}&.&.&h_{2}&h_{2}&0\\h_{n-1}&h_{n-2}&h_{n-3}&.&.&h_{2}&h_{1}}\myvec{x_1\\x_2.\\.\\.\\x_{n-1}}=0
+\end{align}
+By using the similar logic,$h_1=0$. And all the elements of the lower triangular matrix are zero i.e $L=0$ which implies $H=0$.\par
+The solution for $LX=0$ or $UX=0$ when $X\neq 0$, is that each of the elements of the matrices $L,U$ is zero.So,$H=0$, $\vec{H_1}-\vec{H_2}=0$ which means $\vec{H_1}=\vec{H_2}$
 \end{document}
