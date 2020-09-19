@@ -200,9 +200,12 @@ Suppose \begin{align}
     LX=0
 \end{align}
 For $LX=0$ to have a non-trivial solution i.e nullity$\neq 0$, the rank of the matrix $R(L) < n$, which implies $h_0=0$.
+\begin{align}
+    L=\myvec{0&0&0&.&.&0&0\\h_1&0&0&.&.&0&0\\h_2&h_1&0&.&.&0&0\\.&.&.&.&.&.&.\\h_{n-2}&h_{n-3}&.&.&h_{1}&0&0\\h_{n-1}&h_{n-2}&h_{n-3}&.&.&h_{1}&0}
+\end{align}
 Similarly if you consider the submatrix of $L$ 
 \begin{align}
-    L=\myvec{h_1&0&0&.&.&0&0\\h_2&h_1&0&.&.&0&0\\h_3&h_2&h_1&.&.&0&0\\.&.&.&.&.&.&.\\h_{n-2}&h_{n-3}&.&.&h_{2}&h_{2}&0\\h_{n-1}&h_{n-2}&h_{n-3}&.&.&h_{2}&h_{1}}\label{eq:5}
+    L^1=\myvec{h_1&0&0&.&.&0&0\\h_2&h_1&0&.&.&0&0\\h_3&h_2&h_1&.&.&0&0\\.&.&.&.&.&.&.\\h_{n-2}&h_{n-3}&.&.&h_{2}&h_{2}&0\\h_{n-1}&h_{n-2}&h_{n-3}&.&.&h_{2}&h_{1}}\label{eq:5}
     \intertext{where}
     \myvec{h_1&0&0&.&.&0&0\\h_2&h_1&0&.&.&0&0\\h_3&h_2&h_1&.&.&0&0\\.&.&.&.&.&.&.\\h_{n-2}&h_{n-3}&.&.&h_{2}&h_{1}&0\\h_{n-1}&h_{n-2}&h_{n-3}&.&.&h_{2}&h_{1}}\myvec{x_1\\x_2.\\.\\.\\x_{n-2}}=0
 \end{align}
