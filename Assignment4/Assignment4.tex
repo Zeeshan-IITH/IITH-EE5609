@@ -132,7 +132,7 @@ columns=fullflexible
 \makeatother
 \let\StandardTheFigure\thefigure
 \let\vec\mathbf
-
+\usepackage{mathtools, nccmath}
 
 \begin{document}
 
@@ -143,7 +143,7 @@ columns=fullflexible
 \large AI20MTECH11001\\
 \end{center}
 \begin{abstract}
-This document converts convolution in to matrix form
+This document is about isosceles triangles having a common base.
 \end{abstract}
 Download all python codes from 
 \begin{lstlisting}
@@ -157,34 +157,27 @@ https://github.com/Zeeshan-IITH/IITH-EE5609
 \section{problem}
 $\triangle ABC$ and $\triangle DBC$ are two isosceles triangles on the same base $BC$.Prove that $\angle ABD=\angle ACD$.
 \section{construction}
-In an Isosceles triangle the angles opposite to sides of equal length are equal.Therefore the angles $\angle ABC=\angle ACB$ and $\angle DBC=\angle DCB$.Since the two triangles are isosceles,$\norm{BD}=\norm{CD}$ and $\norm{AB}=\norm{AC}$.
+In an Isosceles triangle the angles opposite to sides of equal length are equal.Therefore the angles $\angle ABC=\angle ACB$ and $\angle DBC=\angle DCB$.Let the vertex $B$ be at origin and not lose generality.Since the two triangles are isosceles,$\norm{\vec{B}-\vec{D}}=\norm{\vec{C}-\vec{D}}$ and $\norm{\vec{A}-\vec{B}}=\norm{\vec{A}-\vec{C}}$.
 \section{Explanation}
 The triangles $\triangle ABC$ and $\triangle DBC$ are isosceles triangles,so
 \begin{align}
-    AB^TCB=AC^TBC\\
-    DB^TCB=DC^TBC
+    \norm{\vec{A}-\vec{B}} = \norm{\vec{A}-\vec{C}}\label{eq:1}\\
+    \norm{\vec{D}-\vec{B}} = \norm{\vec{D}-\vec{C}}\label{eq:2}
 \end{align}
+From equation \eqref{eq:1},we get
 \begin{align}
-    \cos\angle ABD=\frac{AB^TDB}{\norm{DB}\norm{AB}}\label{eq:1}\\
-    \cos\angle ACD=\frac{AC^TDC}{\norm{AC}\norm{DC}}\label{eq:2}
+    \medmath{\brak{\vec{A}-\vec{B}}^T\brak{\vec{A}-\vec{B}}}=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{A}-\vec{C}}}\\
+    \medmath{\brak{\vec{A}-\vec{B}}^T\brak{\vec{A}-\vec{D}+\vec{D}-\vec{B}}}=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{A}-\vec{D}+\vec{D}-\vec{C}}}\\
+    \medmath{\brak{\vec{A}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}
+    +\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}\label{eq:3}
 \end{align}
-From the equations,\eqref{eq:1} and \eqref{eq:2} we get\begin{align}
-    \norm{AC}\norm{DC}\brak{\cos\angle ABD-\cos\angle ACD}\notag\\
-    =AB^TDB-AC^TDC\label{eq:3}\\
-    =\brak{AC+CB}^TDB-AC^T\brak{DB+BC}\\
-    =AC^TDB+CB^TDB-AC^TDB-AC^TBC\\
-    =CB^TDB-AC^TBC\\
-    =CB^TDB-CB^TAB\\
-    =CB^T\brak{DB-AB}\\
-    =CB^TDA=0
-\end{align}
-Since $A,D$ lie on the normal to $CB$.Therefore
+From the equation \eqref{eq:1},we get
 \begin{align}
-    \cos\angle ABD-\cos\angle ACD=0\\
-    \cos\angle ABD=\cos\angle ACD\\
-    \angle ABD=\angle ACD
+    \medmath{\brak{\vec{A}-\vec{B}}^T\brak{\vec{A}-\vec{B}}}=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{A}-\vec{C}}}\\
+    \medmath{\brak{\vec{A}-\vec{C}+\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{B}}}=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{A}-\vec{B}+\vec{B}-\vec{C}}}\\
+    \medmath{\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{B}}}=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{B}-\vec{C}}}\label{eq:4}
 \end{align}
-\begin{figure}
+\begin{figure}[b]
     \centering
     \begin{tikzpicture}
         \coordinate (B) at (0,0);
@@ -197,4 +190,34 @@ Since $A,D$ lie on the normal to $CB$.Therefore
     \caption{Isosceles triangles with common base BC}
     \label{fig:1}
 \end{figure}
+From the equation \eqref{eq:2},we get
+\begin{align}
+    \medmath{\brak{\vec{D}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\medmath{\brak{\vec{D}-\vec{C}}^T\brak{\vec{D}-\vec{C}}}\\
+    \medmath{\brak{\vec{D}-\vec{C}+\vec{C}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\medmath{\brak{\vec{D}-\vec{C}}^T\brak{\vec{D}-\vec{B}+\vec{B}-\vec{C}}}\\
+    \medmath{\brak{\vec{C}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\medmath{\brak{\vec{D}-\vec{C}}^T\brak{\vec{B}-\vec{C}}}\label{eq:5}
+\end{align}
+Subtracting equations \eqref{eq:4} and \eqref{eq:5},we get
+\begin{align}
+    \begin{multlined}
+        \medmath{\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{B}}-\brak{\vec{C}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\\
+        \medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{B}-\vec{C}}-\brak{\vec{D}-\vec{C}}^T\brak{\vec{B}-\vec{C}}}
+    \end{multlined}\\
+    \medmath{\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{D}}}=\medmath{\brak{\vec{A}-\vec{D}}^T\brak{\vec{B}-\vec{C}}}\label{eq:6}
+\end{align}
+Since $\brak{\vec{A}-\vec{D}}^T\brak{\vec{B}-\vec{C}}$=${\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}$, the equation \eqref{eq:6} can be written as
+\begin{align}
+    \medmath{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}&=\medmath{\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{D}}}\\
+    \medmath{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}&=-\medmath{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}\\
+    2\medmath{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}&=0\\
+    \medmath{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}&=0\label{eq:7}
+\end{align}
+From equations \eqref{eq:3} and \eqref{eq:7},we get
+\begin{align}
+    \medmath{\brak{\vec{A}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}&=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}
+    +\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}\\
+    \medmath{\brak{\vec{A}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}&=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}}\\
+    \medmath{\cos\angle ABD}&=\medmath{\frac{\norm{\vec{A}-\vec{C}}\norm{\vec{D}-\vec{C}}}{\norm{\vec{A}-\vec{B}}\norm{\vec{D}-\vec{B}}}\cos\angle ACD}\\
+    \medmath{\cos\angle ABD}&=\medmath{\cos\angle ACD}\\
+    \medmath{\angle ABD}&=\medmath{\angle ACD}
+\end{align}
 \end{document}
