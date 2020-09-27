@@ -171,12 +171,6 @@ From equation \eqref{eq:1},we get
     \medmath{\brak{\vec{A}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}
     +\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}\label{eq:3}
 \end{align}
-From the equation \eqref{eq:1},we get
-\begin{align}
-    \medmath{\brak{\vec{A}-\vec{B}}^T\brak{\vec{A}-\vec{B}}}=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{A}-\vec{C}}}\\
-    \medmath{\brak{\vec{A}-\vec{C}+\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{B}}}=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{A}-\vec{B}+\vec{B}-\vec{C}}}\\
-    \medmath{\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{B}}}=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{B}-\vec{C}}}\label{eq:4}
-\end{align}
 \begin{figure}[b]
     \centering
     \begin{tikzpicture}
@@ -190,13 +184,7 @@ From the equation \eqref{eq:1},we get
     \caption{Isosceles triangles with common base BC}
     \label{fig:1}
 \end{figure}
-From the equation \eqref{eq:2},we get
-\begin{align}
-    \medmath{\brak{\vec{D}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\medmath{\brak{\vec{D}-\vec{C}}^T\brak{\vec{D}-\vec{C}}}\\
-    \medmath{\brak{\vec{D}-\vec{C}+\vec{C}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\medmath{\brak{\vec{D}-\vec{C}}^T\brak{\vec{D}-\vec{B}+\vec{B}-\vec{C}}}\\
-    \medmath{\brak{\vec{C}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\medmath{\brak{\vec{D}-\vec{C}}^T\brak{\vec{B}-\vec{C}}}\label{eq:5}
-\end{align}
-Subtracting equations \eqref{eq:4} and \eqref{eq:5},we get
+Doing the below calculation,we get
 \begin{align}
     \begin{multlined}
         \medmath{\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{B}}-\brak{\vec{C}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\\
@@ -211,13 +199,19 @@ Since $\brak{\vec{A}-\vec{D}}^T\brak{\vec{B}-\vec{C}}$=${\brak{\vec{B}-\vec{C}}^
     2\medmath{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}&=0\\
     \medmath{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}&=0\label{eq:7}
 \end{align}
-From equations \eqref{eq:3} and \eqref{eq:7},we get
+Taking the inner product of $A-B,B-D$ and $A-C,D-C$,we get
 \begin{align}
-    \medmath{\brak{\vec{A}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}&=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}
-    +\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}\\
-    \medmath{\brak{\vec{A}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}&=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}}\\
-    \medmath{\cos\angle ABD}&=\medmath{\frac{\norm{\vec{A}-\vec{C}}\norm{\vec{D}-\vec{C}}}{\norm{\vec{A}-\vec{B}}\norm{\vec{D}-\vec{B}}}\cos\angle ACD}\\
-    \medmath{\cos\angle ABD}&=\medmath{\cos\angle ACD}\\
-    \medmath{\angle ABD}&=\medmath{\angle ACD}
+    \medmath{\cos\angle ABD}=\medmath{\frac{\brak{\vec{A}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}{\norm{\vec{A}-\vec{B}}\norm{\vec{D}-\vec{B}}}}\\
+    \medmath{\cos\angle ACD}=\medmath{\frac{\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}}{\norm{\vec{A}-\vec{C}}\norm{\vec{D}-\vec{C}}}}
+\end{align}
+Subtracting the above equations we get 
+\begin{align}
+    \medmath{\cos\angle ABD-\cos\angle ACD}\\
+    =\medmath{\frac{\brak{\vec{A}-\vec{B}}^T\brak{\vec{D}-\vec{B}}-\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}}{\norm{\vec{A}-\vec{C}}\norm{\vec{D}-\vec{C}}}}\\
+    =\medmath{\frac{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}{\norm{\vec{A}-\vec{C}}\norm{\vec{D}-\vec{C}}}}\\
+    \intertext{Using the equation \eqref{eq:7},we get}
+    \medmath{\cos\angle ABD-\cos\angle ACD}=0\\
+    \medmath{\cos\angle ABD}=\medmath{\cos\angle ACD}\\
+    \medmath{\angle ABD}=\medmath{\angle ACD}
 \end{align}
 \end{document}
