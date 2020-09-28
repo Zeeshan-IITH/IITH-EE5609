@@ -172,25 +172,18 @@ From equation \eqref{eq:1},we get
     {\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}
     +\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}\label{eq:3}
 \end{multline}
-\begin{figure}[b]
-    \centering
-    \begin{tikzpicture}
-        \coordinate (B) at (0,0);
-        \coordinate (A) at (3,6);
-        \coordinate (C) at (6,0);
-        \coordinate (D) at (3,3);
-        \draw (A)node[above]{$A$}--(B)node[below]{$B$}--(C)node[below]{$C$}--cycle;
-        \draw (D)node[above]{$D$}--(B)node[]{}--(C)node[]{}--cycle;
-    \end{tikzpicture}
-    \caption{Isosceles triangles with common base BC}
-    \label{fig:1}
-\end{figure}
 Doing the below calculation,we get
 \begin{multline}
     {\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{B}}-\brak{\vec{C}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\\
     {\brak{\vec{A}-\vec{C}}^T\brak{\vec{B}-\vec{C}}-\brak{\vec{D}-\vec{C}}^T\brak{\vec{B}-\vec{C}}}\\
     {\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{D}}}={\brak{\vec{A}-\vec{D}}^T\brak{\vec{B}-\vec{C}}}\label{eq:6}
 \end{multline}
+\begin{figure}[!h]
+    \centering
+    \resizebox{\columnwidth}{!}{\input{fig_assgn4}}
+    \caption{Isosceles triangles with common base BC}
+    \label{myfig:1}
+\end{figure}
 Since $\brak{\vec{A}-\vec{D}}^T\brak{\vec{B}-\vec{C}}$=${\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}$, the equation \eqref{eq:6} can be written as
 \begin{align}
     {\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}&={\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{D}}}\\
