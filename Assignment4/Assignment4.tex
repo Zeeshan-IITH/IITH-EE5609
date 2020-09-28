@@ -165,12 +165,13 @@ The triangles $\triangle ABC$ and $\triangle DBC$ are isosceles triangles,so
     \norm{\vec{D}-\vec{B}} = \norm{\vec{D}-\vec{C}}\label{eq:2}
 \end{align}
 From equation \eqref{eq:1},we get
-\begin{align}
-    \medmath{\brak{\vec{A}-\vec{B}}^T\brak{\vec{A}-\vec{B}}}=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{A}-\vec{C}}}\\
-    \medmath{\brak{\vec{A}-\vec{B}}^T\brak{\vec{A}-\vec{D}+\vec{D}-\vec{B}}}=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{A}-\vec{D}+\vec{D}-\vec{C}}}\\
-    \medmath{\brak{\vec{A}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}
+\begin{multline}
+    {\brak{\vec{A}-\vec{B}}^T\brak{\vec{A}-\vec{B}}}={\brak{\vec{A}-\vec{C}}^T\brak{\vec{A}-\vec{C}}}\\
+    {\brak{\vec{A}-\vec{B}}^T\brak{\vec{A}-\vec{D}+\vec{D}-\vec{B}}}=\\{\brak{\vec{A}-\vec{C}}^T\brak{\vec{A}-\vec{D}+\vec{D}-\vec{C}}}\\
+    {\brak{\vec{A}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\\
+    {\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}
     +\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}\label{eq:3}
-\end{align}
+\end{multline}
 \begin{figure}[b]
     \centering
     \begin{tikzpicture}
@@ -185,33 +186,31 @@ From equation \eqref{eq:1},we get
     \label{fig:1}
 \end{figure}
 Doing the below calculation,we get
-\begin{align}
-    \begin{multlined}
-        \medmath{\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{B}}-\brak{\vec{C}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\\
-        \medmath{\brak{\vec{A}-\vec{C}}^T\brak{\vec{B}-\vec{C}}-\brak{\vec{D}-\vec{C}}^T\brak{\vec{B}-\vec{C}}}
-    \end{multlined}\\
-    \medmath{\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{D}}}=\medmath{\brak{\vec{A}-\vec{D}}^T\brak{\vec{B}-\vec{C}}}\label{eq:6}
-\end{align}
+\begin{multline}
+    {\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{B}}-\brak{\vec{C}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}=\\
+    {\brak{\vec{A}-\vec{C}}^T\brak{\vec{B}-\vec{C}}-\brak{\vec{D}-\vec{C}}^T\brak{\vec{B}-\vec{C}}}\\
+    {\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{D}}}={\brak{\vec{A}-\vec{D}}^T\brak{\vec{B}-\vec{C}}}\label{eq:6}
+\end{multline}
 Since $\brak{\vec{A}-\vec{D}}^T\brak{\vec{B}-\vec{C}}$=${\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}$, the equation \eqref{eq:6} can be written as
 \begin{align}
-    \medmath{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}&=\medmath{\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{D}}}\\
-    \medmath{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}&=-\medmath{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}\\
-    2\medmath{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}&=0\\
-    \medmath{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}&=0\label{eq:7}
+    {\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}&={\brak{\vec{C}-\vec{B}}^T\brak{\vec{A}-\vec{D}}}\\
+    {\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}&=-{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}
+    2{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}&=0\\
+    \brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}&=0\label{eq:7}
 \end{align}
 Taking the inner product of $A-B,B-D$ and $A-C,D-C$,we get
 \begin{align}
-    \medmath{\cos\angle ABD}=\medmath{\frac{\brak{\vec{A}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}{\norm{\vec{A}-\vec{B}}\norm{\vec{D}-\vec{B}}}}\\
-    \medmath{\cos\angle ACD}=\medmath{\frac{\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}}{\norm{\vec{A}-\vec{C}}\norm{\vec{D}-\vec{C}}}}
+    \cos\angle ABD=\frac{\brak{\vec{A}-\vec{B}}^T\brak{\vec{D}-\vec{B}}}{\norm{\vec{A}-\vec{B}}\norm{\vec{D}-\vec{B}}}\\
+    \cos\angle ACD=\frac{\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}}{\norm{\vec{A}-\vec{C}}\norm{\vec{D}-\vec{C}}}
 \end{align}
 Subtracting the above equations we get 
 \begin{align}
-    \medmath{\cos\angle ABD-\cos\angle ACD}\\
-    =\medmath{\frac{\brak{\vec{A}-\vec{B}}^T\brak{\vec{D}-\vec{B}}-\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}}{\norm{\vec{A}-\vec{C}}\norm{\vec{D}-\vec{C}}}}\\
-    =\medmath{\frac{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}{\norm{\vec{A}-\vec{C}}\norm{\vec{D}-\vec{C}}}}\\
+    \cos\angle ABD-\cos\angle ACD\\
+    =\frac{\brak{\vec{A}-\vec{B}}^T\brak{\vec{D}-\vec{B}}-\brak{\vec{A}-\vec{C}}^T\brak{\vec{D}-\vec{C}}}{\norm{\vec{A}-\vec{C}}\norm{\vec{D}-\vec{C}}}\\
+    =\frac{\brak{\vec{B}-\vec{C}}^T\brak{\vec{A}-\vec{D}}}{\norm{\vec{A}-\vec{C}}\norm{\vec{D}-\vec{C}}}\\
     \intertext{Using the equation \eqref{eq:7},we get}
-    \medmath{\cos\angle ABD-\cos\angle ACD}=0\\
-    \medmath{\cos\angle ABD}=\medmath{\cos\angle ACD}\\
-    \medmath{\angle ABD}=\medmath{\angle ACD}
+    \cos\angle ABD-\cos\angle ACD=0\\
+    \cos\angle ABD=\cos\angle ACD\\
+    \angle ABD=\angle ACD
 \end{align}
 \end{document}
