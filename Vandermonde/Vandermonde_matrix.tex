@@ -1,0 +1,190 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
+\usepackage{gensymb}
+%\doublespacing
+\singlespacing
+
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+
+
+\begin{document}
+
+\begin{center}
+\huge Vandermonde matrix\\
+
+\large Shaik Zeeshan Ali\\
+\large AI20MTECH11001\\
+\end{center}
+\begin{abstract}
+This document calculates the determinant of a vandermonde matrix.
+\end{abstract}
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/Zeeshan-IITH/IITH-EE5609/new/master/codes
+\end{lstlisting}
+
+and latex-tikz codes from 
+\begin{lstlisting}
+https://github.com/Zeeshan-IITH/IITH-EE5609
+\end{lstlisting}
+\section{Problem}
+Derive an expression for the determinant of a Vandermonde matrix
+\begin{align}
+    \vec{V}=\myvec{1&\alpha_1&\alpha_1^2&\cdots&\alpha_1^{n-1}\\1&\alpha_2&\alpha_2^2&\cdots&\alpha_2^{n-1}\\\vdots&\vdots&\vdots&\vdots&\vdots\\1&\alpha_n&\alpha_n^2&\cdots&\alpha_n^{n-1}}
+\end{align}
+\section{construction}
+The given matrix is of the order $n\times n$.The determinant is given as
+\begin{align}
+    \det{\vec{V}}=\det{\myvec{1&\alpha_1&\alpha_1^2&\cdots&\alpha_1^{n-1}\\1&\alpha_2&\alpha_2^2&\cdots&\alpha_2^{n-1}\\\vdots&\vdots&\vdots&\vdots&\vdots\\1&\alpha_n&\alpha_n^2&\cdots&\alpha_n^{n-1}}}
+\end{align}
+By doing Row operations we can reduce it to the form
+\begin{align}
+    \det{\vec{V}}={\mydet{1&\alpha_1&\alpha_1^2&\cdots&\alpha_1^{n-1}\\1&\alpha_2&\alpha_2^2&\cdots&\alpha_2^{n-1}\\\vdots&\vdots&\vdots&\vdots&\vdots\\1&\alpha_n&\alpha_n^2&\cdots&\alpha_n^{n-1}}}\xleftrightarrow[i\neq 1]{{R_i=R_i-R_1}}\\
+    =\mydet{1&\alpha_1&\alpha_1^2&\cdots&\alpha_1^{n-1}\\0&\alpha_2-\alpha_1&\alpha_2^2-\alpha_1^2&\cdots&\alpha_2^{n-1}-\alpha_1^{n-1}\\\vdots&\vdots&\vdots&\vdots&\vdots\\0&\alpha_{n}-\alpha_1&\alpha_{n}^2-\alpha_1^2&\cdots&\alpha_{n}^{n-1}-\alpha_1^{n-1}}
+\end{align}
+By doing column operations we can reduce it to the form
+\begin{align}
+    \mydet{1&\alpha_1&\alpha_1^2&\cdots&\alpha_1^{n-1}\\0&\alpha_2-\alpha_1&\alpha_2^2-\alpha_1^2&\cdots&\alpha_2^{n-1}-\alpha_1^{n-1}\\\vdots&\vdots&\vdots&\vdots&\vdots\\0&\alpha_{n}-\alpha_1&\alpha_{n}^2-\alpha_1^2&\cdots&\alpha_{n}^{n-1}-\alpha_1^{n-1}}\xleftrightarrow[i>1]{{C_i=C_i-C_{i-1}}}\\
+    =\mydet{1&0&0&\cdots&0\\0&\alpha_2-\alpha_1&(\alpha_2-\alpha_1)\alpha_2&\cdots&(\alpha_2-\alpha_1)\alpha_2^{n-2}\\\vdots&\vdots&\vdots&\vdots&\vdots\\0&\alpha_{n}-\alpha_1&(\alpha_{n}-\alpha_1)\alpha_{n}&\cdots&(\alpha_{n}-\alpha_1)\alpha_{n}^{n-2}}\\
+    =\prod_{n\geq j >1} (\alpha_{j}-\alpha_{1}) {\mydet{1&\alpha_2&\alpha_2^2&\cdots&\alpha_2^{n-2}\\1&\alpha_3&\alpha_3^2&\cdots&\alpha_3^{n-2}\\\vdots&\vdots&\vdots&\vdots&\vdots\\1&\alpha_{n}&\alpha_{n}^2&\cdots&\alpha_{n}^{n-2}}}\label{eq:2}
+\end{align}
+\section{explanation}
+By using equation \eqref{eq:2} the determinant can be reduced to $\brak{n-1}\times \brak{n-1}$, which is also of the form vandermonde matrix.The determinant of the reduced vandermonde matrix will be
+\begin{align}
+    {\mydet{1&\alpha_2&\alpha_2^2&\cdots&\alpha_2^{n-2}\\1&\alpha_3&\alpha_3^2&\cdots&\alpha_3^{n-2}\\\vdots&\vdots&\vdots&\vdots&\vdots\\1&\alpha_{n}&\alpha_{n}^2&\cdots&\alpha_{n}^{n-2}}}\\
+    =\prod_{n\geq j >2} (\alpha_{j}-\alpha_{2}) {\mydet{1&\alpha_3&\alpha_3^2&\cdots&\alpha_3^{n-3}\\1&\alpha_4&\alpha_4^2&\cdots&\alpha_4^{n-3}\\\vdots&\vdots&\vdots&\vdots&\vdots\\1&\alpha_{n}&\alpha_{n}^2&\cdots&\alpha_{n}^{n-3}}}
+\end{align}
+So in each calculation the dimension is reduced.Continuing the similar reduction, the determinant of the matrix $\vec{V}$,we can write it as
+\begin{align}
+    &\det{\vec{V}}\\
+    &=\prod_{1< j\leq n} (\alpha_{j}-\alpha_{1})\prod_{2< j\leq n}(\alpha_{j}-\alpha_{2})\cdots\prod_{(n-1)< j\leq n} (\alpha_{j}-\alpha_{n-1})\\
+    &=\prod_{(1\leq i<n)}\prod_{(i< j\leq n)}(\alpha_{j}-\alpha_{i})
+\end{align}
+\end{document}
