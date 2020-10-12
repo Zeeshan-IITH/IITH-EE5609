@@ -184,7 +184,7 @@ By using equation \eqref{eq:2} the determinant can be reduced to $\brak{n-1}\tim
 So in each calculation the dimension is reduced.Continuing the similar reduction, the determinant of the matrix $\vec{V}$,we can write it as
 \begin{align}
     &\det{\vec{V}}\\
-    &=\prod_{1< j\leq n} (\alpha_{j}-\alpha_{1})\prod_{2< j\leq n}(\alpha_{j}-\alpha_{2})\cdots\prod_{(n-1)< j\leq n} (\alpha_{j}-\alpha_{n-1})\\
-    &=\prod_{(1\leq i<n)}\prod_{(i< j\leq n)}(\alpha_{j}-\alpha_{i})
+    &=\prod_{n\geq j >1} (\alpha_{j}-\alpha_{1})\prod_{n\geq j >2}(\alpha_{j}-\alpha_{2})\cdots\prod_{n\geq j >n-1} (\alpha_{j}-\alpha_{n-1})\\
+    &=\prod_{n> i\geq 1)}\prod_{(n\geq j>i )}(\alpha_{j}-\alpha_{i})
 \end{align}
 \end{document}
