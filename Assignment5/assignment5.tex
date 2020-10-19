@@ -277,7 +277,7 @@ The above reduced matrix has one free variable.Let it be $1$,then the eigen vect
 \end{align}
 normalizing $p_1$,we get
 \begin{align}
-    p_1=\myvec{0.0238\\1}
+    p_1=\frac{1}{\sqrt{884+42\sqrt{442}}}\myvec{1\\21+\sqrt{442}}
 \end{align}
 the eigen vector corresponding to eigen value $\lambda_2$ will be
 \begin{align}
@@ -291,11 +291,11 @@ The above reduced matrix has one free variable.Let it be $1$,then the eigen vect
 \end{align}
 normalizing $p_2$,we get
 \begin{align}
-    p_2=\myvec{1\\-0.0238}
+    p_2=\frac{1}{\sqrt{884-42\sqrt{442}}}\myvec{1\\21-\sqrt{442}}
 \end{align}
 So the transformation matrix will be 
 \begin{align}
-    \vec{P}=\myvec{p_1&p_2}=\myvec{0.0238&1\\1&-0.0238}
+    \vec{P}=\myvec{p_1&p_2}=\myvec{\frac{1}{\sqrt{884+42\sqrt{442}}}&\frac{1}{\sqrt{884-42\sqrt{442}}}\\\frac{21+\sqrt{442}}{\sqrt{884+42\sqrt{442}}}&\frac{21-\sqrt{442}}{\sqrt{884-42\sqrt{442}}}}
 \end{align}
 \section{affine transformation}
 Doing the affine transformation on given quadratic equation, we get pair to intersecting straight lines passing through origin.\par
@@ -318,13 +318,14 @@ So the affine transformation of the given lines will be
     \vec{y}^T\myvec{-1.5&0\\0&6}\vec{y}=0\\
     \brak{x-2y}\brak{x+2y}=0
 \end{align}
+Since the two lines are symmetric with respect to both $X-axis$ and $Y-axis$,the axes themselves are the bisectors of the transformed pair of lines.So the bisectors will be $x=0$ and $y=0$.
 \begin{figure}[h]
     \centering
     \includegraphics[width=\columnwidth]{Fig1_a5.png}
     \caption{straight lines after affine transformation passing through origin}
     \label{fig:1}
 \end{figure}
-This line will pass through origin,whose bisectors will be the $x-$axis and $y-$axis.The bisectors wil be of the form
+Matrix notation will be of the form
 \begin{align}
     \vec{y}^T\myvec{0&0.5\\0.5&0}\vec{y}=0\\
     \vec{y}^T\vec{K}\vec{y}=0\\
@@ -339,12 +340,12 @@ Taking the inverse of the affine transformation of the equation $xy=0$,will give
 Substituting the values we get
 \begin{align}
     \begin{multlined}
-        \vec{x}^T\myvec{0.0238&0.5\\0.5&-0.0238}\vec{x}\\
-        -\myvec{1.046&0.951}\vec{x}+1=0
+        \vec{x}^T\myvec{\frac{1}{2\sqrt{442}}&\frac{21}{2\sqrt{442}}\\\frac{21}{2\sqrt{442}}&-\frac{1}{2\sqrt{442}}}\vec{x}\\
+        -\myvec{\frac{22}{\sqrt{442}}&\frac{20}{\sqrt{442}}}\vec{x}+\frac{21}{\sqrt{442}}=0
     \end{multlined}\\
     \begin{multlined}
-        0.0238x^2+xy-0.0238y^2\\
-        -1.046x-0.951y+1=0
+        \frac{x^2}{2\sqrt{442}}+\frac{21}{\sqrt{442}}xy-\frac{y^2}{2\sqrt{442}}\\
+        -\frac{22x}{\sqrt{442}}-\frac{20y}{\sqrt{442}}+\frac{21}{\sqrt{442}}=0
     \end{multlined}\\
     x^2+42xy-y^2-44x-40y+42=0
 \end{align}
