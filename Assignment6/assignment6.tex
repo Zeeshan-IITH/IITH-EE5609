@@ -214,16 +214,16 @@ Therefore the vertex is $c=\myvec{0\\0}$.\par
 Applying affine transformation on equation \eqref{eq:1},we get
 \begin{align}
     \vec{x}^T\vec{P}\myvec{4&-2\\-2&1}\vec{P}^T\vec{x}+2\myvec{-6&3}\vec{P}\vec{x}+9=0\\
-    \vec{x}^T\myvec{0&0\\0&5}\vec{x}+2\myvec{0&3\sqrt{5}}\vec{x}+9=0\\
-    5y^2+6\sqrt{5}y+9=0\\
-    \brak{\sqrt{5}y+3}^2=0
+    \vec{x}^T\myvec{0&0\\0&5}\vec{x}+2\myvec{0&-3\sqrt{5}}\vec{x}+9=0\\
+    5y^2-6\sqrt{5}y+9=0\\
+    \brak{\sqrt{5}y-3}^2=0
 \end{align}
-So the line is $\sqrt{5}y+3=0$.\par
+So the line is $\sqrt{5}y-3=0$.\par
 Applying inverse affine tranformation on the line we get
 \begin{align}
-    \myvec{0&\sqrt{5}}\vec{P}\vec{x}+3=0\\
-    \myvec{0&\sqrt{5}}\myvec{\frac{1}{\sqrt{5}}&\frac{2}{\sqrt{5}}\\\frac{2}{\sqrt{5}}&-\frac{1}{\sqrt{5}}}\vec{x}+3=0\\
-    \myvec{2&-1}\vec{x}+3=0\\
+    \myvec{0&\sqrt{5}}\vec{P}^{-1}\vec{x}-3=0\\
+    \myvec{0&\sqrt{5}}\myvec{\frac{1}{\sqrt{5}}&\frac{2}{\sqrt{5}}\\\frac{2}{\sqrt{5}}&-\frac{1}{\sqrt{5}}}\vec{x}-3=0\\
+    \myvec{2&-1}\vec{x}-3=0\\
     2x-y-3=0
 \end{align}
 Therefore the equation of coincident lines is $\brak{2x-y-3}^2=0$.
