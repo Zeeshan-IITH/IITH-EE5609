@@ -1,6 +1,7 @@
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
 %
 \usepackage{setspace}
+\usepackage{textcomp}
 \usepackage{gensymb}
 %\doublespacing
 \singlespacing
@@ -161,15 +162,17 @@ Trace the following parabola
 \end{align}
 \section{construction}
 The given quadratic equation can be written in the matrix form as
+\section{construction}
+The given quadratic equation can be written in the matrix form as
 \begin{align}
     \vec{x}^T\myvec{4&-2\\-2&1}\vec{x}+2\myvec{-6&3}\vec{x}+9=0\label{eq:1}
 \end{align}
-Calculating the parameters
+Calculating the parameters,we get
 \begin{align}
     \mydet{\vec{V}}=\mydet{4&-2\\-2&1}=0\\
     \mydet{\vec{V}&\vec{u}\\\vec{u}^T&f}=\mydet{4&-2&-6\\-2&1&3\\-6&3&9}=0
 \end{align}
-Therefore the given parabola equation is a degenerate.\par
+Therefore the given parabola equation is a degenerate.The quadratic equation corresponds to a pair of coincident straight lines.\par
 The characteristic equation of $\vec{V}$ will be
 \begin{align}
     \mydet{\vec{V}-\lambda\vec{I}}&=\mydet{4-\lambda&-2\\-2&1-\lambda}\\
@@ -198,42 +201,31 @@ Therefore the transformation matrix will be
 \begin{align}
     \vec{P}=\myvec{p_1&p_2}=\myvec{\frac{1}{\sqrt{5}}&-\frac{2}{\sqrt{5}}\\\frac{2}{\sqrt{5}}&\frac{1}{\sqrt{5}}}
 \end{align}
-The value of $\eta$ will be
-\begin{align}
-    \eta&=2p_1^T\vec{u}\\
-    &=2\myvec{\frac{1}{\sqrt{5}}&\frac{2}{\sqrt{5}}}\myvec{-6\\3}\\
-    &=0
-\end{align}
 \section{Equation of the coincident line}
-The vertex of the degenerate hyperbola can be calculated as
+The general equation of coincident lines in quadratic form can be written as
 \begin{align}
-    \myvec{\vec{u}^T+\frac{\eta}{2}p_1^T\\\vec{V}}c=\myvec{-f\\\frac{\eta}{2}p_1-\vec{u}}\\
-    \myvec{-6&3\\4&-2\\-2&1}c=\myvec{-9\\6\\-3}\\
-    \myvec{-6&3&-9\\4&-2&6\\-2&1&-3}\xleftrightarrow{R_3=3R_3-R_1}\myvec{-6&3&-9\\4&-2&6\\0&0&0}\\
-    \myvec{-6&3&-9\\4&-2&6\\0&0&0}\xleftrightarrow{R_2=\frac{3}{2}R_2+R_1}\myvec{-6&3&-9\\0&0&0\\0&0&0}
+    \brak{mx-y+c}^2=0\\
+    \vec{x}^T\myvec{m^2&-m\\-m&1}\vec{x}+2\myvec{cm&-c}\vec{x}+c^2=0
 \end{align}
-Therefore the vertex is $c=\myvec{1\\-1}$ is one of the solution.\par
-Applying affine transformation on equation \eqref{eq:1},we get
+The degenerate equation in matrix form will be 
 \begin{align}
-    \vec{y}^T\vec{D}\vec{y}=0\\
-    \vec{y}^T\myvec{0&0\\0&5}\vec{y}=0\\
-    5y^2=0\\
-    y^2=0
+    \myvec{\vec{x}^T&1}\myvec{\vec{V}&\vec{u}\\\vec{u}^T&f}\myvec{\vec{x}\\1}=0\\
+    \intertext{So the solution to nullspace will be}
+    \myvec{m^2&-m&cm\\-m&1&-c\\cm&-c&c^2}\xleftrightarrow{R_3=mR_3-cR_1}\myvec{m^2&-m&cm\\-m&1&-c\\0&0&0}\\
+    \xleftrightarrow{R_2=mR_2+R_1}\myvec{m^2&-m&cm\\0&0&0\\0&0&0}\xleftrightarrow{R_1=\frac{R_1}{m}}\myvec{m&-1&c\\0&0&0\\0&0&0}
 \end{align}
-So the line is $y=0$.\par
-Applying inverse affine tranformation on the line we get
+So the $3\times 3$ matrix can also be written as
 \begin{align}
-    \myvec{0&1}\vec{P}^{-1}\brak{\vec{x}-c}=0\\
-    \myvec{0&1}\myvec{\frac{1}{\sqrt{5}}&\frac{2}{\sqrt{5}}\\-\frac{2}{\sqrt{5}}&\frac{1}{\sqrt{5}}}\vec{x}-\myvec{0&1}\myvec{\frac{1}{\sqrt{5}}&\frac{2}{\sqrt{5}}\\-\frac{2}{\sqrt{5}}&\frac{1}{\sqrt{5}}}\myvec{1\\-1}=0\\
-    \myvec{-\frac{2}{\sqrt{5}}&\frac{1}{\sqrt{5}}}\vec{x}+\frac{3}{\sqrt{5}}=0\\
-    -\frac{2x}{\sqrt{5}}+\frac{y}{\sqrt{5}}+\frac{3}{\sqrt{5}}\\
-    2x-y-3=0
+    \myvec{\vec{V}&\vec{u}\\\vec{u}^T&f}=\myvec{m\\-1\\c}\myvec{m&-1&c}
 \end{align}
-Therefore the equation of coincident lines is $\brak{2x-y-3}^2=0$.
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=\columnwidth]{Fig_a6.png}
-    \caption{Pair of coincident lines}
-    \label{fig:my_label}
-\end{figure}
+This matrix has a rank of 1.\par
+Applying this on the given problem we get
+\begin{align}
+    \myvec{\vec{V}&\vec{u}\\\vec{u}^T&f}=\myvec{4&-2&-6\\-2&1&3\\-6&3&9}\\
+    \xleftrightarrow{R_3=\frac{2R_2}{3}+R_1}\myvec{4&-2&-6\\-2&1&3\\0&0&0}\xleftrightarrow{R_2=2R_2+R_1}\myvec{4&-2&-6\\0&0&0\\0&0&0}
+\end{align}
+Therefore the equation of the line is $2x-y-3=0$,which can be expressed in vector form as
+\begin{align}
+    \myvec{2\\-1}^T\vec{x}=3
+\end{align}
 \end{document}
