@@ -210,9 +210,12 @@ The general equation of coincident lines in quadratic form can be written as
 The degenerate equation in matrix form will be 
 \begin{align}
     \myvec{\vec{x}^T&1}\myvec{\vec{V}&\vec{u}\\\vec{u}^T&f}\myvec{\vec{x}\\1}=0\\
-    \intertext{So the solution to nullspace will be}
     \myvec{m^2&-m&cm\\-m&1&-c\\cm&-c&c^2}\xleftrightarrow{R_3=mR_3-cR_1}\myvec{m^2&-m&cm\\-m&1&-c\\0&0&0}\\
     \xleftrightarrow{R_2=mR_2+R_1}\myvec{m^2&-m&cm\\0&0&0\\0&0&0}\xleftrightarrow{R_1=\frac{R_1}{m}}\myvec{m&-1&c\\0&0&0\\0&0&0}
+\end{align}
+So the solution to nullspace will be
+\begin{align}
+    \myvec{m&-1&c}\myvec{\vec{x}\\1}=mx-y+c=0
 \end{align}
 So the $3\times 3$ matrix can also be written as
 \begin{align}
