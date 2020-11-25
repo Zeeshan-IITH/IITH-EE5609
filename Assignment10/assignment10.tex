@@ -1,0 +1,209 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage{gensymb}
+%\doublespacing
+\singlespacing
+
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\usepackage{mathtools, nccmath}
+\usepackage{longtable}
+\renewcommand{\arraystretch}{1.5}
+\usepackage{afterpage}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\begin{document}
+
+\begin{center}
+\huge Assignment 10\\
+
+\large Shaik Zeeshan Ali\\
+\large AI20MTECH11001\\
+\end{center}
+\begin{abstract}
+This document is about inverse of the given matrices.
+\end{abstract}
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/Zeeshan-IITH/IITH-EE5609/new/master/codes
+\end{lstlisting}
+
+and latex-tikz codes from 
+\begin{lstlisting}
+https://github.com/Zeeshan-IITH/IITH-EE5609
+\end{lstlisting}
+\section{problem}
+Let $\vec{A}$ and $\vec{B}$ be $n\times n$ matrices over the field $F$.Prove that if $\brak{\vec{I}-\vec{A}\vec{B}}$ is invertibe then $\brak{\vec{I}-\vec{B}\vec{A}}$ is invertible and
+\begin{align}
+    \brak{\vec{I}-\vec{B}\vec{A}}^{-1}=\vec{I}+\vec{B}\brak{\vec{I}-\vec{A}\vec{B}}^{-1}\vec{A}
+\end{align}
+\section{invertible}
+Given $\brak{\vec{I}-\vec{A}\vec{B}}$ is invertible.This implies that the nullspace of $\brak{\vec{I}-\vec{A}\vec{B}}$ contains only zero.
+\begin{align}
+    \brak{\vec{I}-\vec{A}\vec{B}}\vec{x}=0\implies\vec{x}=0
+\end{align}
+Consider the matrix $\brak{\vec{I}-\vec{B}\vec{A}}$ and $\vec{x}$ such that
+\begin{align}
+    \brak{\vec{I}-\vec{B}\vec{A}}\vec{x}=0\\
+    \vec{x}=\vec{BA}\vec{x}\label{eq:3}
+\end{align}
+Left multiplying with $\vec{A}$ on both sides of \eqref{eq:3}, we get
+\begin{align}
+    \vec{A}\vec{x}=\vec{ABA}\vec{x}\\
+    \brak{\vec{I}-\vec{A}\vec{B}}\vec{A}\vec{x}=0\implies\vec{A}\vec{x}=0\label{eq:5}
+\end{align}
+From equation \eqref{eq:3}and \eqref{eq:5},we get
+\begin{align}
+    \vec{x}=\vec{B}\brak{\vec{Ax}}\\
+    \vec{x}=0
+\end{align}
+So the matrix $\brak{\vec{I}-\vec{B}\vec{A}}$ is invertible.
+\section{proof}
+Expanding $\brak{\vec{I}-\vec{A}\vec{B}}^{-1}$, we get
+\begin{align}
+    \brak{\vec{I}-\vec{A}\vec{B}}^{-1}=\vec{I}+\brak{\vec{AB}}+\brak{\vec{AB}}^2+\brak{\vec{AB}}^3+...
+\end{align}
+Right multiplying with $\vec{A}$ and left multiplying with $\vec{B}$ on both sides we get
+\begin{align}
+    &\vec{B}\brak{\vec{I}-\vec{A}\vec{B}}^{-1}\vec{A}\notag\\
+    &=\vec{BA}+\vec{B}\brak{\vec{AB}}\vec{A}+\vec{B}\brak{\vec{AB}}^2\vec{A}+\vec{B}\brak{\vec{AB}}^3\vec{A}+...\\
+    &=\brak{\vec{BA}}+\brak{\vec{BA}}^2+\brak{\vec{BA}}^3+...\\
+    &=\brak{\vec{I}-\vec{BA}}^{-1}-\vec{I}
+\end{align}
+Therefore we can say that
+\begin{align}
+    \brak{\vec{I}-\vec{BA}}^{-1}=\vec{I}+\vec{B}\brak{\vec{I}-\vec{A}\vec{B}}^{-1}\vec{A}
+\end{align}
+\end{document}
