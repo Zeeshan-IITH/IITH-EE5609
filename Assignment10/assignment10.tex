@@ -116,7 +116,6 @@ columns=fullflexible
 \providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
 \providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
 \providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
-
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
 	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
 \newcommand{\solution}{\noindent \textbf{Solution: }}
@@ -165,45 +164,46 @@ and latex-tikz codes from
 https://github.com/Zeeshan-IITH/IITH-EE5609
 \end{lstlisting}
 \section{problem}
-Let $\vec{A}$ and $\vec{B}$ be $n\times n$ matrices over the field $F$.Prove that if $\brak{\vec{I}-\vec{A}\vec{B}}$ is invertibe then $\brak{\vec{I}-\vec{B}\vec{A}}$ is invertible and
-\begin{align}
-    \brak{\vec{I}-\vec{B}\vec{A}}^{-1}=\vec{I}+\vec{B}\brak{\vec{I}-\vec{A}\vec{B}}^{-1}\vec{A}
-\end{align}
+Let $\vec{A}$ and $\vec{B}$ be $n\times n$ matrices over the field $F$.Prove that if $\brak{\vec{I}-\vec{A}\vec{B}}$ is invertibe
+\begin{enumerate}
+    \item $\brak{\vec{I}-\vec{B}\vec{A}}$ is invertible and
+    \item $\brak{\vec{I}-\vec{B}\vec{A}}^{-1}=\vec{I}+\vec{B}\brak{\vec{I}-\vec{A}\vec{B}}^{-1}\vec{A}$
+\end{enumerate}
 \section{invertible}
-Given $\brak{\vec{I}-\vec{A}\vec{B}}$ is invertible.This implies that the nullspace of $\brak{\vec{I}-\vec{A}\vec{B}}$ contains only zero.
-\begin{align}
-    \brak{\vec{I}-\vec{A}\vec{B}}\vec{x}=0\implies\vec{x}=0
-\end{align}
-Consider the matrix $\brak{\vec{I}-\vec{B}\vec{A}}$ and $\vec{x}$ such that
-\begin{align}
-    \brak{\vec{I}-\vec{B}\vec{A}}\vec{x}=0\\
-    \vec{x}=\vec{BA}\vec{x}\label{eq:3}
-\end{align}
-Left multiplying with $\vec{A}$ on both sides of \eqref{eq:3}, we get
-\begin{align}
-    \vec{A}\vec{x}=\vec{ABA}\vec{x}\\
-    \brak{\vec{I}-\vec{A}\vec{B}}\vec{A}\vec{x}=0\implies\vec{A}\vec{x}=0\label{eq:5}
-\end{align}
-From equation \eqref{eq:3}and \eqref{eq:5},we get
-\begin{align}
-    \vec{x}=\vec{B}\brak{\vec{Ax}}\\
-    \vec{x}=0
-\end{align}
-So the matrix $\brak{\vec{I}-\vec{B}\vec{A}}$ is invertible.
-\section{proof}
-Expanding $\brak{\vec{I}-\vec{A}\vec{B}}^{-1}$, we get
-\begin{align}
-    \brak{\vec{I}-\vec{A}\vec{B}}^{-1}=\vec{I}+\brak{\vec{AB}}+\brak{\vec{AB}}^2+\brak{\vec{AB}}^3+...
-\end{align}
-Right multiplying with $\vec{A}$ and left multiplying with $\vec{B}$ on both sides we get
-\begin{align}
-    &\vec{B}\brak{\vec{I}-\vec{A}\vec{B}}^{-1}\vec{A}\notag\\
-    &=\vec{BA}+\vec{B}\brak{\vec{AB}}\vec{A}+\vec{B}\brak{\vec{AB}}^2\vec{A}+\vec{B}\brak{\vec{AB}}^3\vec{A}+...\\
-    &=\brak{\vec{BA}}+\brak{\vec{BA}}^2+\brak{\vec{BA}}^3+...\\
-    &=\brak{\vec{I}-\vec{BA}}^{-1}-\vec{I}
-\end{align}
-Therefore we can say that
-\begin{align}
-    \brak{\vec{I}-\vec{BA}}^{-1}=\vec{I}+\vec{B}\brak{\vec{I}-\vec{A}\vec{B}}^{-1}\vec{A}
-\end{align}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Invertible & A matrix $\vec{M}$ is invertible if it is non-singular i.e. the null space of $\vec{M}$ contains only\\
+        &zero vector.If $\vec{x}$ is a vector such that $\vec{M}\vec{x}=0\implies \vec{x}=0$\\
+        \hline
+        Proof for 1& Consider a vecor $\vec{y}$ such that $\brak{\vec{I}-\vec{B}\vec{A}}\vec{y}=0$\\ 
+        &$\brak{\vec{I}-\vec{B}\vec{A}}\vec{y}=0\implies\vec{y}=\vec{BA}\vec{y}$\\
+        &$\vec{A}\vec{y}=\vec{ABA}\vec{y}\implies\brak{\vec{I}-\vec{A}\vec{B}}\vec{A}\vec{y}=0$\\
+        &since the matrix $\brak{\vec{I}-\vec{A}\vec{B}}$ is invertible,$\vec{A}\vec{y}=0$\\
+        &$\vec{y}=\vec{B}\brak{\vec{Ay}}\implies\vec{y}=0$\\
+        & Hence the matrix $\brak{\vec{I}-\vec{B}\vec{A}}$ is invertible.\\
+        \hline
+    \end{tabular}
+    \caption{}
+    \label{tab:my_label}
+\end{table}
+\pagebreak
+\myemptypage
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+         \hline
+         Expansion of & $\brak{\vec{I}-\vec{A}\vec{B}}^{-1}=\vec{I}+\brak{\vec{AB}}+\brak{\vec{AB}}^2+\brak{\vec{AB}}^3+...$\\
+         Inverse&$\brak{\vec{I}-\vec{B}\vec{A}}^{-1}=\vec{I}+\brak{\vec{BA}}+\brak{\vec{BA}}^2+\brak{\vec{BA}}^3+...$\\
+         \hline
+         Proof for 2 & Right multiplying with $\vec{A}$ and left multiplying with $\vec{B}$ on both sides of $\brak{\vec{I}-\vec{A}\vec{B}}^{-1}$\\ &$\vec{B}\brak{\vec{I}-\vec{A}\vec{B}}^{-1}\vec{A}=\vec{BA}+\vec{B}\brak{\vec{AB}}\vec{A}+\vec{B}\brak{\vec{AB}}^2\vec{A}+\vec{B}\brak{\vec{AB}}^3\vec{A}+...$\\
+         &$=\brak{\vec{BA}}+\brak{\vec{BA}}^2+\brak{\vec{BA}}^3+...$\\
+         &$=\brak{\vec{I}-\vec{BA}}^{-1}-\vec{I}$\\
+         & Therefore we can say that $\brak{\vec{I}-\vec{BA}}^{-1}=\vec{I}+\vec{B}\brak{\vec{I}-\vec{A}\vec{B}}^{-1}\vec{A}$\\
+         \hline
+    \end{tabular}
+    \caption{}
+    \label{tab:my_label}
+\end{table}
 \end{document}
