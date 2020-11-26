@@ -170,30 +170,28 @@ Let $\vec{A}$ and $\vec{B}$ be $n\times n$ matrices over the field $F$.Prove tha
     \item $\brak{\vec{I}-\vec{B}\vec{A}}^{-1}=\vec{I}+\vec{B}\brak{\vec{I}-\vec{A}\vec{B}}^{-1}\vec{A}$
 \end{enumerate}
 \section{PROOF}
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|}
-        \hline
-        Invertible & A matrix $\vec{M}$ is invertible if it is non-singular i.e. the null space of $\vec{M}$ contains only\\
-        &zero vector.If $\vec{x}$ is a vector such that $\vec{M}\vec{x}=0\implies \vec{x}=0$\\
-        \hline
-        Proof for 1& Consider a vecor $\vec{y}$ such that $\brak{\vec{I}-\vec{B}\vec{A}}\vec{y}=0$\\ 
-        &$\brak{\vec{I}-\vec{B}\vec{A}}\vec{y}=0\implies\vec{y}=\vec{BA}\vec{y}$\\
-        &$\vec{A}\vec{y}=\vec{ABA}\vec{y}\implies\brak{\vec{I}-\vec{A}\vec{B}}\vec{A}\vec{y}=0$\\
-        &since the matrix $\brak{\vec{I}-\vec{A}\vec{B}}$ is invertible,$\vec{A}\vec{y}=0$\\
-        &$\vec{y}=\vec{B}\brak{\vec{Ay}}\implies\vec{y}=0$\\
-        & Hence the matrix $\brak{\vec{I}-\vec{B}\vec{A}}$ is invertible.\\
-        \hline
-         Expansion of & $\brak{\vec{I}-\vec{A}\vec{B}}^{-1}=\vec{I}+\brak{\vec{AB}}+\brak{\vec{AB}}^2+\brak{\vec{AB}}^3+...$\\
-         Inverse&$\brak{\vec{I}-\vec{B}\vec{A}}^{-1}=\vec{I}+\brak{\vec{BA}}+\brak{\vec{BA}}^2+\brak{\vec{BA}}^3+...$\\
-         \hline
-         Proof for 2 & Right multiplying with $\vec{A}$ and left multiplying with $\vec{B}$ on both sides of $\brak{\vec{I}-\vec{A}\vec{B}}^{-1}$\\ &$\vec{B}\brak{\vec{I}-\vec{A}\vec{B}}^{-1}\vec{A}=\vec{BA}+\vec{B}\brak{\vec{AB}}\vec{A}+\vec{B}\brak{\vec{AB}}^2\vec{A}+\vec{B}\brak{\vec{AB}}^3\vec{A}+...$\\
-         &$=\brak{\vec{BA}}+\brak{\vec{BA}}^2+\brak{\vec{BA}}^3+...$\\
-         &$=\brak{\vec{I}-\vec{BA}}^{-1}-\vec{I}$\\
-         & Therefore we can say that $\brak{\vec{I}-\vec{BA}}^{-1}=\vec{I}+\vec{B}\brak{\vec{I}-\vec{A}\vec{B}}^{-1}\vec{A}$\\
-         \hline
-    \end{tabular}
-    \caption{Proof}
-    \label{tab:my_label}
-\end{table}
+\begin{longtable}{|c|c|}
+\caption{PROOF}
+\hline
+\text{Invertible} & \text{ A matrix $\vec{M}$ is invertible if it is non-singular i.e. the null space of $\vec{M}$ contains only}\\
+& \text{zero vector.If $\vec{x}$ is a vector such that $\vec{M}\vec{x}=0\implies \vec{x}=0$}\\
+\hline
+\text{Proof for 1} & \text{Consider a vecor $\vec{y}$ such that $\brak{\vec{I}-\vec{B}\vec{A}}\vec{y}=0$}\\
+& \text{$\brak{\vec{I}-\vec{B}\vec{A}}\vec{y}=0\implies\vec{y}=\vec{BA}\vec{y}$}\\
+& \text{$\vec{A}\vec{y}=\vec{ABA}\vec{y}\implies\brak{\vec{I}-\vec{A}\vec{B}}\vec{A}\vec{y}=0$}\\
+& \text{since the matrix $\brak{\vec{I}-\vec{A}\vec{B}}$ is invertible,$\vec{A}\vec{y}=0$}\\
+& \text{$\vec{y}=\vec{B}\brak{\vec{Ay}}\implies\vec{y}=0$}\\
+& \text{Hence the matrix $\brak{\vec{I}-\vec{B}\vec{A}}$ is invertible.}\\
+\hline
+\text{Observation} & \text{Let $\vec{C}=\brak{\vec{I}-\vec{AB}}^{-1}$,then}\\
+& \text{$\brak{\vec{I}-\vec{BA}}\brak{\vec{BCA}}=\vec{BCA}-\vec{BABCA}=\vec{B}\brak{\vec{I}-\vec{AB}}\vec{CA}=\vec{BC^{-1}CA}=\vec{BA}$}\\
+& \text{$\vec{\brak{\vec{I}-\vec{BA}}\brak{\vec{BCA}}=\vec{BA}}$}
+\hline
+\text{Proof for 2} & \text{Let us consider the product $\vec{\brak{I-BA}\brak{BCA+I}}$}\\
+& \text{$\vec{\brak{I-BA}\brak{BCA+I}}=\vec{\brak{\vec{I}-\vec{BA}}\brak{\vec{BCA}}}+\brak{\vec{I-BA}}$}\\
+& \text{$=\vec{BA+I-BA}=\vec{I}$}\\
+& \text{$\brak{\vec{I-BA}}^{-1}=\vec{I+B\brak{I-AB}^{-1}A}$}\\
+& \text{Hence proved.}
+\hline
+\end{longtable}
 \end{document}
