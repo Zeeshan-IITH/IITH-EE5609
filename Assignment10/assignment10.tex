@@ -134,6 +134,23 @@ columns=fullflexible
 \let\vec\mathbf
 \usepackage{mathtools, nccmath}
 \usepackage{longtable}
+\usepackage{multirow}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+\usepackage{color}                                            %%
+\usepackage{array}                                            %%
+\usepackage{longtable}                                        %%
+\usepackage{calc}                                             %%
+\usepackage{multirow}                                         %%
+\usepackage{hhline}                                           %%
+\usepackage{ifthen}                                           %%
+%optionally (for landscape tables embedded in another document): %%
+\usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+
 \renewcommand{\arraystretch}{1.5}
 \usepackage{afterpage}
 \newcommand\myemptypage{
@@ -170,28 +187,32 @@ Let $\vec{A}$ and $\vec{B}$ be $n\times n$ matrices over the field $F$.Prove tha
     \item $\brak{\vec{I}-\vec{B}\vec{A}}^{-1}=\vec{I}+\vec{B}\brak{\vec{I}-\vec{A}\vec{B}}^{-1}\vec{A}$
 \end{enumerate}
 \section{PROOF}
-\begin{longtable}{|c|c|}
-\caption{PROOF}
-\hline
-\text{Invertible} & \text{ A matrix $\vec{M}$ is invertible if it is non-singular i.e. the null space of $\vec{M}$ contains only}\\
-& \text{zero vector.If $\vec{x}$ is a vector such that $\vec{M}\vec{x}=0\implies \vec{x}=0$}\\
-\hline
-\text{Proof for 1} & \text{Consider a vecor $\vec{y}$ such that $\brak{\vec{I}-\vec{B}\vec{A}}\vec{y}=0$}\\
-& \text{$\brak{\vec{I}-\vec{B}\vec{A}}\vec{y}=0\implies\vec{y}=\vec{BA}\vec{y}$}\\
-& \text{$\vec{A}\vec{y}=\vec{ABA}\vec{y}\implies\brak{\vec{I}-\vec{A}\vec{B}}\vec{A}\vec{y}=0$}\\
-& \text{since the matrix $\brak{\vec{I}-\vec{A}\vec{B}}$ is invertible,$\vec{A}\vec{y}=0$}\\
-& \text{$\vec{y}=\vec{B}\brak{\vec{Ay}}\implies\vec{y}=0$}\\
-& \text{Hence the matrix $\brak{\vec{I}-\vec{B}\vec{A}}$ is invertible.}\\
-\hline
-\text{Observation} & \text{Let $\vec{C}=\brak{\vec{I}-\vec{AB}}^{-1}$,then}\\
-& \text{$\brak{\vec{I}-\vec{BA}}\brak{\vec{BCA}}=\vec{BCA}-\vec{BABCA}=\vec{B}\brak{\vec{I}-\vec{AB}}\vec{CA}=\vec{BC^{-1}CA}=\vec{BA}$}\\
-& \text{$\vec{\brak{\vec{I}-\vec{BA}}\brak{\vec{BCA}}=\vec{BA}}$}
-\hline
-\text{Proof for 2} & \text{Let us consider the product $\vec{\brak{I-BA}\brak{BCA+I}}$}\\
-& \text{$\vec{\brak{I-BA}\brak{BCA+I}}=\vec{\brak{\vec{I}-\vec{BA}}\brak{\vec{BCA}}}+\brak{\vec{I-BA}}$}\\
-& \text{$=\vec{BA+I-BA}=\vec{I}$}\\
-& \text{$\brak{\vec{I-BA}}^{-1}=\vec{I+B\brak{I-AB}^{-1}A}$}\\
-& \text{Hence proved.}
-\hline
-\end{longtable}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+         \hline
+         Invertible & A matrix $\vec{M}$ is invertible if it is non-singular i.e. the null space of $\vec{M}$ contains only \\
+         & zero vector.If $\vec{x}$ is a vector such that $\vec{M}\vec{x}=0\implies \vec{x}=0$\\
+         \hline
+         Proof for 1 & Consider a vecor $\vec{y}$ such that $\brak{\vec{I}-\vec{B}\vec{A}}\vec{y}=0$\\
+         & $\brak{\vec{I}-\vec{B}\vec{A}}\vec{y}=0\implies\vec{y}=\vec{BA}\vec{y}$\\
+         & $\vec{A}\vec{y}=\vec{ABA}\vec{y}\implies\brak{\vec{I}-\vec{A}\vec{B}}\vec{A}\vec{y}=0$\\
+         & since the matrix $\brak{\vec{I}-\vec{A}\vec{B}}$ is invertible,$\vec{A}\vec{y}=0$\\
+         & $\vec{y}=\vec{B}\brak{\vec{Ay}}\implies\vec{y}=0$\\
+         & Hence the matrix $\brak{\vec{I}-\vec{B}\vec{A}}$ is invertible.\\
+         \hline
+         Observation & Let $\vec{C}=\brak{\vec{I}-\vec{AB}}^{-1}$,then\\
+         & $\brak{\vec{I}-\vec{BA}}\brak{\vec{BCA}}=\vec{BCA}-\vec{BABCA}=\vec{B}\brak{\vec{I}-\vec{AB}}\vec{CA}=\vec{BC^{-1}CA}=\vec{BA}$\\
+         & $\vec{\brak{\vec{I}-\vec{BA}}\brak{\vec{BCA}}=\vec{BA}}$\\
+         \hline
+         Proof for 2 & Let us consider the product $\vec{\brak{I-BA}\brak{BCA+I}}$\\
+         & $\vec{\brak{I-BA}\brak{BCA+I}}=\vec{\brak{\vec{I}-\vec{BA}}\brak{\vec{BCA}}}+\brak{\vec{I-BA}}$\\
+         & $=\vec{BA+I-BA}=\vec{I}$\\
+         & $\brak{\vec{I-BA}}^{-1}=\vec{I+B\brak{I-AB}^{-1}A}$\\
+         & Hence proved.\\
+         \hline
+    \end{tabular}
+    \caption{Proof}
+    \label{tab:my_label}
+\end{table}
 \end{document}
