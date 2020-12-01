@@ -1,14 +1,17 @@
-\documentclass[journal,12pt,twocolumn]{IEEEtran}
-%
+\documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
 \usepackage{setspace}
-\usepackage{textcomp}
 \usepackage{gensymb}
-%\doublespacing
 \singlespacing
-
 \usepackage[cmex10]{amsmath}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
 \usepackage{amsthm}
-%\usepackage{iithtlc}
+\usepackage{mdframed}
 \usepackage{mathrsfs}
 \usepackage{txfonts}
 \usepackage{stfloats}
@@ -16,11 +19,11 @@
 \usepackage{cite}
 \usepackage{cases}
 \usepackage{subfig}
-%\usepackage{xtab}
+
 \usepackage{longtable}
 \usepackage{multirow}
-%\usepackage{algorithm}
-%\usepackage{algpseudocode}
+
+
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{steinmetz}
@@ -29,9 +32,9 @@
 \usepackage{verbatim}
 \usepackage{tfrupee}
 \usepackage[breaklinks=true]{hyperref}
-%\usepackage{stmaryrd}
-\usepackage{tkz-euclide} % loads  TikZ and tkz-base
-%\usetkzobj{all}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
 \usetikzlibrary{calc,math}
 \usepackage{listings}
     \usepackage{color}                                            %%
@@ -41,16 +44,12 @@
     \usepackage{multirow}                                         %%
     \usepackage{hhline}                                           %%
     \usepackage{ifthen}                                           %%
-  %optionally (for landscape tables embedded in another document): %%
     \usepackage{lscape}     
 \usepackage{multicol}
 \usepackage{chngcntr}
-%\usepackage{enumerate}
 
-%\usepackage{wasysym}
-%\newcounter{MYtempeqncnt}
 \DeclareMathOperator*{\Res}{Res}
-%\renewcommand{\baselinestretch}{2}
+
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
@@ -59,7 +58,7 @@
 \renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
 \renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
 
-% correct bad hyphenation here
+
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
 
@@ -69,24 +68,8 @@ frame=single,
 breaklines=true,
 columns=fullflexible
 }
-\newenvironment{amatrix}[1]{%
-  \left(\begin{array}{@{}*{#1}{c}|c@{}}
-}{%
-  \end{array}\right)
-}
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
-\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
-
-% Swap the definition of \abs* and \norm*, so that \abs
-% and \norm resizes the size of the brackets, and the 
-% starred version does not.
-\makeatletter
-\let\oldabs\abs
-\def\abs{\@ifstar{\oldabs}{\oldabs*}}
-%
-\let\oldnorm\norm
-\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
-\makeatother
+\begin{document}
+\onecolumn
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
@@ -95,15 +78,13 @@ columns=fullflexible
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}[problem]{Definition}
-%\newtheorem{thm}{Theorem}[section] 
-%\newtheorem{defn}[thm]{Definition}
-%\newtheorem{algorithm}{Algorithm}[section]
-%\newtheorem{cor}{Corollary}
+
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
 \bibliographystyle{IEEEtran}
-%\bibliographystyle{ieeetr}
+\raggedbottom
+\setlength{\parindent}{0pt}
 \providecommand{\mbf}{\mathbf}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
@@ -116,6 +97,18 @@ columns=fullflexible
 \providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
 \providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
 \providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\renewcommand{\arraystretch}{2}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\mathbf{\left\vert#1\right\vert}}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\mathbf{\left\lVert#1\right\rVert}}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{\mathbf{E\left[ #1 \right]}}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
 	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
 \newcommand{\solution}{\noindent \textbf{Solution: }}
@@ -123,48 +116,21 @@ columns=fullflexible
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
 \newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
-%\numberwithin{equation}{section}
 \numberwithin{equation}{subsection}
-%\numberwithin{problem}{section}
-%\numberwithin{definition}{section}
 \makeatletter
 \@addtoreset{figure}{problem}
 \makeatother
 \let\StandardTheFigure\thefigure
 \let\vec\mathbf
-\usepackage{mathtools, nccmath}
-\usepackage{longtable}
-\usepackage{multirow}
-
-\usetikzlibrary{calc,math}
-\usepackage{listings}
-\usepackage{color}                                            %%
-\usepackage{array}                                            %%
-\usepackage{longtable}                                        %%
-\usepackage{calc}                                             %%
-\usepackage{multirow}                                         %%
-\usepackage{hhline}                                           %%
-\usepackage{ifthen}                                           %%
-%optionally (for landscape tables embedded in another document): %%
-\usepackage{lscape}     
-\usepackage{multicol}
-\usepackage{chngcntr}
-
-
-\renewcommand{\arraystretch}{1.5}
-\usepackage{afterpage}
-\newcommand\myemptypage{
-	\null
-	\thispagestyle{empty}
-	\addtocounter{page}{-1}
-	\newpage
-}
-
-\begin{document}
-
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
 \begin{center}
 \huge Assignment 11\\
-
 \large Shaik Zeeshan Ali\\
 \large AI20MTECH11001\\
 \end{center}
@@ -175,7 +141,6 @@ Download all python codes from
 \begin{lstlisting}
 https://github.com/Zeeshan-IITH/IITH-EE5609/new/master/codes
 \end{lstlisting}
-
 and latex-tikz codes from 
 \begin{lstlisting}
 https://github.com/Zeeshan-IITH/IITH-EE5609
@@ -186,10 +151,9 @@ Let $\vec{V}$ be the vector space of $n\times n$ matrices over field $\vec{F}$. 
     \vec{T\brak{B}}=\vec{AB}
 \end{align}
 Show that the minimal polynomial for $\vec{T}$ is the minimal polynomial for $\vec{A}$.
-\section{construction}
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|}
+\section{Proof}
+\renewcommand{\thetable}{1}
+\begin{longtable}{|l|l|}
     \hline
         Given &  $\vec{A}$ is a fixed matrix from the vector space $\vec{V}$ of $n\times n$ matrices. A linear operator \\
         &on the finite dimensional vector space $\vec{V}$, $\vec{T}$ is defined as $\vec{T\brak{B}}=\vec{AB}$.\\
@@ -202,17 +166,14 @@ Show that the minimal polynomial for $\vec{T}$ is the minimal polynomial for $\v
         & If $\vec{B}=\myvec{b_1&b_2&.&.&b_n}$,then the linear transformation of $\vec{B}$ will be\\
         &$\vec{T\brak{B}}=\myvec{\vec{A}b_1&\vec{A}b_2&.&.\vec{A}b_n}$\\
         & $\vec{M_T\brak{B}}=\myvec{\vec{T}\brak{b_1}\\\vec{T}\brak{b_2}\\.\\.\\\vec{T}\brak{b_n}}=\myvec{\vec{A}&&&&\\&\vec{A}&&\vec{O}&\\&&.&&\\&\vec{O}&&.&\\&&&&\vec{A}}\myvec{b_1\\b_2\\.\\.\\b_n}$\\
-         & here each element represents the elements of the matrix $\vec{AB}$\\
     \hline
-    \end{tabular}
-\end{table}
-\pagebreak
-\myemptypage
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|}
+        & $\vec{M_T}=\myvec{\vec{A}&&&&\\&\vec{A}&&\vec{O}&\\&&.&&\\&\vec{O}&&.&\\&&&&\vec{A}}$\\
     \hline
-         & $\vec{M_T}=\myvec{\vec{A}&&&&\\&\vec{A}&&\vec{O}&\\&&.&&\\&\vec{O}&&.&\\&&&&\vec{A}}$\\
+    \caption{Construction}
+    \label{tab:construction}
+\end{longtable}
+\renewcommand{\thetable}{2}
+\begin{longtable}{|l|l|}
     \hline
         Properties of minimal & The roots of the characteristic polynomial,eigen values and the minimal  \\
         polynomial &polynomial are same,except for multiplicities.The roots of\\
@@ -225,43 +186,52 @@ Show that the minimal polynomial for $\vec{T}$ is the minimal polynomial for $\v
         & Therfore we can see that the eigen values of $\vec{A}$ are also the eigen values \\
         &of the linear operator $\vec{T}$\\
     \hline
-        Minimal polynomial of $\vec{T}$ & The minimal polynomial of $\vec{A}$ divides the characteristic polynomial of \\
-        &$\vec{A}$ and $\vec{T}$. Let the minimal polynomial of $\vec{A}$ is of degree $p\leq n$\\
+        Minimal polynomial  & The minimal polynomial of $\vec{A}$ divides the characteristic polynomial of $\vec{A}$ and  $\vec{T}$.\\
+        of $\vec{T}$ & Let the minimal polynomial of $\vec{A}$ is of degree $p\leq n$\\
         & $f\brak{x}=a_0+a_1x+a_2x^2...a_px^p$ such that $f\brak{\vec{A}}=0$\\
         &$f\brak{\vec{T}}=a_0\vec{I}+a_1\vec{T}+a_2\vec{T}^2+..+a_p\vec{T}^p$\\
+    \hline
         &$f\brak{\vec{T}}=\myvec{f\brak{\vec{A}}&&&&\\&f\brak{\vec{A}}&&\vec{O}&\\&&.&&\\&\vec{O}&&.&\\&&&&f\brak{\vec{A}}}=\vec{O}_{n^2\times n^2}$\\
         &Therefore the minimal polynomial for $\vec{T}$ is the minimal polynomial\\
         & for $\vec{A}$.\\
     \hline
-    \end{tabular}
-\end{table}
-\pagebreak
-\myemptypage
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|}
+    \caption{Proof}
+    \label{tab:construction}
+\end{longtable}
+\renewcommand{\thetable}{3}
+\begin{longtable}{|l|l|}
     \hline
-         Example& Consider $\vec{V}$ to be a vector space of $2\times 2$ matrices and $\vec{A}=\myvec{1&4\\0&2}$. So, the matrix of\\
-         & the linear operator $\vec{T}$ with respect to the basis \\
-         & $\vec{e_1}=\myvec{1&0\\0&0}$,\quad$\vec{e_2}=\myvec{0&0\\1&0}$,\quad$\vec{e_3}=\myvec{0&1\\0&0}$,\quad$\vec{e_4}=\myvec{0&0\\0&1}$\\
+    \multirow{3}{*}{} & \\
+        Assuming matrix $\vec{A}$ as follows:&Let us Consider 2 $\times$ 2 matrix,\\
+        &\parbox{6cm}{\begin{align*}
+            \vec{A}=\myvec{1&4\\0&2}
+        \end{align*}}\\
+    \hline
+    Minimal polynomial of $\vec{A}$&The eigen values of $\vec{A}$ are $1,2$.\\
+         &So, the minimal polynomial is $f\brak{x}=\brak{x-1}\brak{x-2}$\\
+    \hline
+        Matrix of linear operator &So, the matrix of the linear operator $\vec{T}$ with respect to the basis \\
+         & $\vec{e_1}=\myvec{1&0\\0&0}$,\qquad$\vec{e_2}=\myvec{0&0\\1&0}$,\qquad$\vec{e_3}=\myvec{0&1\\0&0}$,\qquad$\vec{e_4}=\myvec{0&0\\0&1}$\\
          & $\vec{T\brak{e_1}}=\myvec{1&4\\0&2}\myvec{1&0\\0&0}=\myvec{1&0\\0&0}=1.\vec{e_1}+0.\vec{e_2}+0.\vec{e_3}+0.\vec{e_4}$\\
          &$\vec{T\brak{e_2}}=\myvec{1&4\\0&2}\myvec{0&0\\1&0}=\myvec{4&0\\2&0}=4.\vec{e_1}+2.\vec{e_2}+0.\vec{e_3}+0.\vec{e_4}$\\
          &$\vec{T\brak{e_3}}=\myvec{1&4\\0&2}\myvec{0&1\\0&0}=\myvec{0&1\\0&0}=0.\vec{e_1}+0.\vec{e_2}+1.\vec{e_3}+0.\vec{e_4}$\\
+    \hline
          &$\vec{T\brak{e_4}}=\myvec{1&4\\0&2}\myvec{0&0\\0&1}=\myvec{0&4\\0&2}=0.\vec{e_1}+0.\vec{e_2}+4.\vec{e_3}+2.\vec{e_4}$\\ 
          &So the matrix of the linear operator will be\\
          &$\vec{M_T}=\myvec{1&4&0&0\\0&2&0&0\\0&0&1&4\\0&0&0&2}=\myvec{\vec{A}&\vec{O}\\\vec{O}&\vec{A}}$\\
-         &The eigen values of $\vec{A}$ are $1,2$.So, the minimal polynomial is $f\brak{x}=\brak{x-1}\brak{x-2}$\\
-         &$f\brak{\vec{M_T}}=\brak{\vec{T-I}}\brak{\vec{T-2I}}=\myvec{\vec{A-I}&\vec{O}\\\vec{O}&\vec{A-I}}\myvec{\vec{A-2I}&\vec{O}\\\vec{O}&\vec{A-2I}}$\\
-         &$f\brak{\vec{M_T}}=\myvec{\vec{\brak{A-I}\brak{A-2I}}&\vec{O}\\\vec{O}&\vec{\brak{A-I}\brak{A-2I}}}=\myvec{f\brak{\vec{A}}&\vec{O}\\\vec{O}&f\brak{\vec{A}}}$\\
-         & We know that the minimal polynomial $f\brak{\vec{A}}$ annihilates $\vec{A}$, i.e $f\brak{\vec{A}}=0$\\
-         & We can see that $f\brak{\vec{M_T}}=\vec{O}$\\
-         & The eigen values of $\vec{M_T}$ are roots of the characterstic equation $\det \brak{\vec{T}-\lambda\vec{I}}$\\
-         &$\det \brak{\vec{T}-\lambda\vec{I}}=\mydet{1-\lambda&4&0&0\\0&2-\lambda&0&0\\0&0&1-\lambda&4\\0&0&0&2-\lambda}=\brak{\brak{1-\lambda}\brak{2-\lambda}}^2$\\
-         & We know that eigen values of $\vec{T}$ should be roots of minimal polynomial of $\vec{T}$, thus\\
-         & minimal polynomial should be of the form $\brak{x-1}^p\brak{x-2}^q$ where $p,q \in \mathbb{N}.. 1\leq p,q\leq2$\\
-         & Therefore the minimal polynomial $f\brak{\vec{A}}$ of $\vec{A}$ annihilates $\vec{T}$, thus we can conclude that\\
-         & $f\brak{{x}}$ is the minimal polynomial of linear operator $\vec{T}$\\
+         \hline
+        Characteristic equation of $\vec{T}$&The characteristic equation of $\vec{T}$ is $\brak{x-1}^2\brak{x-2}^2$\\
+        & So the eigen values are $1,1,2,2$\\
+        \hline
+        Minimal polynomial of $\vec{T}$&$f\brak{\vec{M_T}}=\brak{\vec{T-I}}\brak{\vec{T-2I}}=\myvec{\vec{A-I}&\vec{O}\\\vec{O}&\vec{A-I}}\myvec{\vec{A-2I}&\vec{O}\\\vec{O}&\vec{A-2I}}$\\
+         &$f\brak{\vec{M_T}}=\myvec{\vec{\brak{A-I}\brak{A-2I}}&\vec{O}\\\vec{O}&\vec{\brak{A-I}\brak{A-2I}}}=\myvec{f\brak{\vec{A}}&\vec{O}\\\vec{O}&f\brak{\vec{A}}}=\vec{O}$\\
+        & We know that eigen values of $\vec{T}$ should be roots of minimal polynomial\\
+        & of $\vec{T}$, thus minimal polynomial should be of the form $\brak{x-1}^p\brak{x-2}^q$\\
+        & where $p,q \in \mathbb{N}.. 1\leq p,q\leq2$\\
+        &Therefore the minimal polynomial $f\brak{\vec{A}}$ of $\vec{A}$ annihilates $\vec{T}$,thus we \\
+        & can conclude that $f\brak{{x}}$ is the minimal polynomial of linear operator $\vec{T}$\\
     \hline
-    \end{tabular}
-\end{table}
+    \caption{Example}
+    \label{tab:construction}
+\end{longtable}
 \end{document}
