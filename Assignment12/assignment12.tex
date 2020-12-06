@@ -175,19 +175,20 @@ Let $\vec{T}$ be a linear operator on $\mathbb{R}^2$, the matrix of which in the
 \renewcommand{\thetable}{2}
 \begin{longtable}{|l|l|}
     \hline
-    Characteristic & \qquad  \qquad \qquad \qquad $\det \brak{\vec{A}-\lambda \vec{I}}=\mydet{1-\lambda&-1\\2&2-\lambda}=\lambda^2-3\lambda+4$.\\
-    equation of $\vec{A}$&\qquad  \qquad \qquad \qquad $\lambda_1=\frac{3+\sqrt{7}i}{2}$ and $\lambda_2=\frac{3-\sqrt{7}i}{2}$ are the eigenvalues of $\vec{A}$.\\
-    \hline
-    Proof for 1  & The null space of $\vec{T}$ can be calculated as\\
-   & $\myvec{1&-1\\2&2}\myvec{x\\y}=0$, by augmenting we get $\myvec{1&-1&0\\2&2&0}$ \\
-   & applying row reduction we get\\
-   & $\myvec{1&-1&0\\2&2&0}\xleftrightarrow{R_2=R_2-2R_1}=\myvec{1&-1&0\\0&4&0}\xleftrightarrow{R_1=R_1+\frac{R_2}{4}}=\myvec{1&0&0\\0&4&0}\xleftrightarrow{R_2=\frac{R_2}{4}}\myvec{1&0&0\\0&1&0}$\\
-   & Therefore the nullspace of $\vec{T}$ contains only the zero vector.\\
-   &Assume that there is a 1-dimensional subspace that is invariant under $\vec{T}$,then \\
-   & $\myvec{1&-1\\2&2}\myvec{x\\y}=c\myvec{x\\y}\implies\myvec{x\\y}$ is the eigen vector and c is eigen value.\\
-   & Since the field of vector space is $\mathbb{R}$, there are no eigen values and hence no eigen vectors\\
-   & Since there are no eigen values in the field $\mathbb{R}$, there are no 1-dimensional vectors which\\
-   &can be invariant under $\vec{T}$.\\
+    Proof for 1  & $i)$  The null space of $\vec{T}$ can be calculated as\\
+   & \quad $\myvec{1&-1\\2&2}\myvec{x\\y}=0$, by augmenting we get $\myvec{1&-1&0\\2&2&0}$ \\
+   &\quad applying row reduction we get\\
+   &\quad $\myvec{1&-1&0\\2&2&0}\xleftrightarrow{R_2=R_2-2R_1}=\myvec{1&-1&0\\0&4&0}\xleftrightarrow{R_1=R_1+\frac{R_2}{4}}=\myvec{1&0&0\\0&4&0}\xleftrightarrow{R_2=\frac{R_2}{4}}\myvec{1&0&0\\0&1&0}$\\
+   &\quad Therefore the nullspace of $\vec{T}$ contains only the zero vector.\\
+   &$ii)$ Assume that there is a 1-dimensional subspace that is invariant under $\vec{T}$,then \\
+   &\quad $\vec{A}\vec{x}=c\vec{x}\implies\vec{x}$ is the eigen vector and c is eigen value of $\vec{A}$.\\
+    & \qquad  \qquad \qquad \qquad $\det \brak{\vec{A}-\lambda \vec{I}}=\mydet{1-\lambda&-1\\2&2-\lambda}=\lambda^2-3\lambda+4$.\\
+    &\qquad  \qquad \qquad \qquad $\lambda_1=\frac{3+\sqrt{7}i}{2}$ and $\lambda_2=\frac{3-\sqrt{7}i}{2}$ are the eigenvalues of $\vec{A}$.\\
+   &\quad Since the field of vector space is $\mathbb{R}$, there are no eigen values and hence no eigen vectors\\
+   &\quad Since there are no eigen values in the field $\mathbb{R}$, there are no 1-dimensional vectors which\\
+   &\quad can be invariant under $\vec{T}$.\\
+   &$iii)$If $\vec{T}\brak{\vec{v}}=\vec{T}\brak{\vec{u}}\implies \vec{T}\brak{\vec{v-u}}=0\implies \vec{v-u}=0\implies \vec{v}=\vec{u}$ since the nullspace of $\vec{A}$\\
+   & \quad consists of only the zero vector. So the linear operator is one-to-one.\\
    &Since the range of the linear operator is $\mathbb{R}^2$, the vector space $\mathbb{R}^2$ is invariant under $\vec{T}$.\\
    &And as the nullspace maps to zero vector and zero vector is invariant under $\vec{T}$, the only \\
    &subspaces that are invariant under $\vec{T}$ are the vector space $\mathbb{R}$ and the zero vector.\\
@@ -198,7 +199,6 @@ Let $\vec{T}$ be a linear operator on $\mathbb{R}^2$, the matrix of which in the
    \hline
    & Therefore one of the eigen vectors is $\vec{e_1}=\myvec{-1\\\frac{1+\sqrt{7}i}{2}}$\\
    & This eigen vector $\vec{e_1}$ is a subspace of $\mathbb{C}^2$.\\
-   &\\
    & Applying the linear operator $\vec{U}$ on $\vec{e_1}$, we get\\
    & $\vec{U\brak{ce_1}}=\vec{Ae_1}=c\myvec{1&-1\\2&2}\myvec{-1\\\frac{1+\sqrt{7}i}{2}}=c\frac{3+\sqrt{7}i}{2}\myvec{-1\\\frac{1+\sqrt{7}i}{2}}\implies\vec{U\brak{ce_1}}=c^{'}\vec{e_1}$\\
    &Therefore the vector space $\mathbb{C}^2$ has 1-dimensional invariant subspaces which are\\
