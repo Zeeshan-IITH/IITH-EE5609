@@ -1,0 +1,194 @@
+\documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+\onecolumn
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\renewcommand{\arraystretch}{2}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\mathbf{\left\vert#1\right\vert}}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\mathbf{\left\lVert#1\right\rVert}}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{\mathbf{E\left[ #1 \right]}}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{2cm}
+\begin{center}
+\huge Assignment 14\\
+\large Shaik Zeeshan Ali\\
+\large AI20MTECH11001\\
+\end{center}
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/Zeeshan-IITH/IITH-EE5609/new/master/codes
+\end{lstlisting}
+and latex-tikz codes from 
+\begin{lstlisting}
+https://github.com/Zeeshan-IITH/IITH-EE5609
+\end{lstlisting}
+\section{problem}
+Let $p_n\brak{x}=x^n$ for $x\in\mathbb{R}$ and let $\varrho=span\{p_0,p_1,p_2,...\}$. Then
+\begin{enumerate}
+    \item $\varrho$ is a vector space of all real valued continuous functions on $\mathbb{R}$.
+    \item $\varrho$ is a subspace of all real valued continuous functions on $\mathbb{R}$.
+    \item $\{p_0,p_1,p_2,...\}$ is a linearly independent set in the vector space of all real valued continuous functions on $\mathbb{R}$.
+    \item Trigonometric functions belong to $\varrho$.
+\end{enumerate}
+\section{construction}
+\renewcommand{\thetable}{1}
+\begin{longtable}{|l|l|}
+    \hline
+    Given & $p_n\brak{x}=x^n$ for $x\in\mathbb{R}$ and $\varrho=span\{p_0,p_1,p_2,...\}$.\\
+    \hline
+    Vector& The set $S$ consisting of all real continuous functions on $\mathbb{R}$ forms a vector space.\\
+    space&Let $f$ and $g$ be two real continuous functions from the set $S$.\\
+    of real&Since the sum of two continuous function is a continuous function.\\
+    continuous&$i)$ Addition is commutative $f+g=g+f$\\
+    functions&$ii)$ Addition is associative$f+(g+h)=(f+g)+h$\\
+    on $\mathbb{R}$&$iii)$There is unique $O$, zero function which maps every element to 0.\\
+    &$iv)$Additive inverse.For each $f$ in $S$, $-f$ is a function in $S$.\\
+    &$v)$Properties of scalar multiplication.For $c,c_1,c_2\in \mathbb{R}$,\\
+    &\qquad $a)$ $1f=f$ where the constant function $1$ maps every element to $1$.\\
+    &\qquad $b)$ $(c_1c_2)f=c_1(c_2f)$\\
+    &\qquad $c)$ $c(f+g)=cf+cg$\\
+    &\qquad $d)$ $c_1+c_2)f=c_1f+c_2f$\\
+    \hline
+    Option 1& $\varrho$ represents the vector space of polynomials. Polynomial functions are infintely \\
+    & continuously differentiable.So any function that is continuous but not differentiable can \\
+    & not be represented by polynomials.\\
+    & Example the function $\abs{x}$ is continous but cannot be represented in \\
+    &polynomial basis.Therefore option 1 is incorrect.\\
+    \hline
+    Option 2& $\varrho$ forms a subspace of all real valued continuous function on $\mathbb{R}$\\
+    &Let $\alpha,\beta$ be two polynomial functions of order m and n, represented by the tuple of\\ &coefficients $(a_0,a_2,a_2..a_m)$ and $(b_0,b_1,b_2...b_n)$,then\\
+    &$c\alpha+\beta$ is also a polynomial function whose coefficients are $(ca_0+b_0,ca_1+b_1,ca_2+b_2...)$\\
+    &Therefore $\varrho$ is a subspace of all real valued continuous functions on $\mathbb{R}$.\\
+    \hline
+    Option 3&Consider the expression\\
+    &$a_0p_0+a_1p_1+a_2p_2+...=O\implies a_0=a_1=a_2=...=0$\\
+    &Hence $\{p_0,p_1,p_2,..\}$ are linearly independent set in the vector space of all real valued \\
+    &continuous functions on $\mathbb{R}$.\\
+    \hline
+    Option 4&The period of trigonometric functions is finite where as the period of polynomials is \\
+    &infinite. So, they cannot belong to the same class.\\
+    \hline
+    \caption{Answer}
+    \label{tab:Ans}
+\end{longtable}
+\end{document}
