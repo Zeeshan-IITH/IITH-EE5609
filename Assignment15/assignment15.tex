@@ -1,0 +1,232 @@
+  \documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+\onecolumn
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\renewcommand{\arraystretch}{2}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\mathbf{\left\vert#1\right\vert}}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\mathbf{\left\lVert#1\right\rVert}}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{\mathbf{E\left[ #1 \right]}}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{2cm}
+\begin{center}
+\huge Assignment 15\\
+\large Shaik Zeeshan Ali\\
+\large AI20MTECH11001\\
+\end{center}
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/Zeeshan-IITH/IITH-EE5609/new/master/codes
+\end{lstlisting}
+and latex-tikz codes from 
+\begin{lstlisting}
+https://github.com/Zeeshan-IITH/IITH-EE5609
+\end{lstlisting}
+\section{problem}
+Let $f$ be a non-zero symmetric bilinear form on $\mathbb{R}^3$.Suppose that there exist linear transformations $T_i:\mathbb{R}^3\xrightarrow[]{}\mathbb{R}$,$i=1,2$ such that for all $\alpha,\beta\in\mathbb{R}^3$, $f\brak{\alpha,\beta}=T_1\brak{\alpha}T_2\brak{\beta}$. Then
+\begin{enumerate}
+    \item rank $f=1$
+    \item dim $\{\beta\in\mathbb{R}^3:f\brak{\alpha,\beta}=0$ for all $\alpha\in\mathbb{R}^3\}=2$
+    \item $f$ is positive semi-definite or negative semi-definite
+    \item $\{\alpha:f\brak{\alpha,\alpha}=0\}$ is a linear subspace of dimension 2
+\end{enumerate}
+\section{construction}
+\renewcommand{\thetable}{1}
+\begin{longtable}{|l|l|}
+    \hline
+    Definition&A bilinear form on a vector space $\vec{V}$ is a function $f$, which assigns to each ordered pair\\
+    of bilinear&of vectors $\alpha,\beta$ in $\vec{V}$ a scalar $f\brak{\alpha,\beta}$ in field $\vec{F}$ which satisfies\\
+    form&\qquad \qquad $i)$ $f\brak{c\alpha_1+\alpha_2,\beta}=cf\brak{\alpha_1,\beta}+f\brak{\alpha_2,\beta}$\\
+    &\qquad \qquad $ii)$ $f\brak{\alpha,c\beta_1+\beta_2}=cf\brak{\alpha,\beta_1}+f\brak{\alpha,\beta_2}$\\
+    \hline
+    Symmetric&A bilinear form on the vector space $\vec{V}$ is symmetric if\\
+    bilinear&\qquad \qquad \qquad $f\brak{\alpha,\beta}=f\brak{\beta,\alpha}$\\
+    form& for all vectors $\alpha,\beta\in\vec{V}$\\
+    \hline
+    Matrix of &Let $\alpha,\beta\in\mathbb{R}^3$ be two vectors, which are represented in standard basis as\\
+    bilinear&$\alpha=\alpha_1\vec{e_1}+\alpha_2\vec{e_2}+\alpha_3\vec{e_3}$ and $\beta=\beta_1\vec{e_1}+\beta_2\vec{e_2}+\beta_3\vec{e_3}$,therefore $f\brak{\alpha,\beta}$ can be represented \\
+    form&in matrix form as\\
+    &$f\brak{\alpha,\beta}=f\brak{\alpha_1\vec{e_1}+\alpha_2\vec{e_2}+\alpha_3\vec{e_3},\beta_1\vec{e_1}+\beta_2\vec{e_2}+\beta_3\vec{e_3}}$\\
+    &$=\myvec{\alpha_1&\alpha_2&\alpha_3}\myvec{f\brak{\vec{e_1},\vec{e_1}}&f\brak{\vec{e_1},\vec{e_2}}&f\brak{\vec{e_1},\vec{e_3}}\\f\brak{\vec{e_2},\vec{e_1}}&f\brak{\vec{e_2},\vec{e_2}}&f\brak{\vec{e_2},\vec{e_3}}\\f\brak{\vec{e_3},\vec{e_1}}&f\brak{\vec{e_3},\vec{e_2}}&f\brak{\vec{e_3},\vec{e_3}}}\myvec{\beta_1\\\beta_2\\\beta_3}$\\
+    \hline
+    Given &Given a non-zero symmetric bilinear form $f$ such that $f\brak{\alpha,\beta}=T_1\brak{\alpha}T_2\brak{\beta}$ where\\
+    &$\alpha,\beta\in\mathbb{R}^3$. So the symmetric bilinear form can be represented on matrix form as\\
+    &$f\brak{\alpha,\beta}=\myvec{\alpha_1&\alpha_2&\alpha_3}\myvec{f\brak{\vec{e_1},\vec{e_1}}&f\brak{\vec{e_1},\vec{e_2}}&f\brak{\vec{e_1},\vec{e_3}}\\f\brak{\vec{e_2},\vec{e_1}}&f\brak{\vec{e_2},\vec{e_2}}&f\brak{\vec{e_2},\vec{e_3}}\\f\brak{\vec{e_3},\vec{e_1}}&f\brak{\vec{e_3},\vec{e_2}}&f\brak{\vec{e_3},\vec{e_3}}}\myvec{\beta_1\\\beta_2\\\beta_3}$\\
+    &$f\brak{\alpha,\beta}=\myvec{\alpha_1&\alpha_2&\alpha_3}\myvec{T_1\brak{\vec{e_1}}T_2\brak{\vec{e_1}}&T_1\brak{\vec{e_1}}T_2\brak{\vec{e_2}}&T_1\brak{\vec{e_1}}T_2\brak{\vec{e_3}}\\T_1\brak{\vec{e_2}}T_2\brak{\vec{e_1}}&T_1\brak{\vec{e_2}}T_2\brak{\vec{e_2}}&T_1\brak{\vec{e_2}}T_2\brak{\vec{e_3}}\\T_1\brak{\vec{e_3}}T_2\brak{\vec{e_1}}&T_1\brak{\vec{e_3}}T_2\brak{\vec{e_2}}&T_1\brak{\vec{e_3}}T_2\brak{\vec{e_3}}\\}\myvec{\beta_1\\\beta_2\\\beta_3}$\\
+    &$f\brak{\alpha,\beta}=\myvec{\alpha_1&\alpha_2&\alpha_3}\myvec{T_1\brak{\vec{e_1}}\\T_1\brak{\vec{e_2}}\\T_1\brak{\vec{e_3}}}\myvec{T_2\brak{\vec{e_1}}&T_2\brak{\vec{e_2}}&T_2\brak{\vec{e_3}}}\myvec{\beta_1\\\beta_2\\\beta_3}=\alpha^T\vec{T_1}\vec{T_2}^T\beta$\\
+    &where $\vec{T_1}=\myvec{T_1\brak{\vec{e_1}}\\T_1\brak{\vec{e_2}}\\T_1\brak{\vec{e_3}}}$ and $\vec{T_2}=\myvec{T_2\brak{\vec{e_1}}\\T_2\brak{\vec{e_2}}\\T_2\brak{\vec{e_3}}}$ are the matrix representation of the linear\\
+    &transformations $T_1,T_2$.So, the matrix representation of $f$ is $\vec{T_1}\vec{T_2}^T$ or $\vec{T_2}\vec{T_1}^T$ since\\
+    &$f$ is symmetric.\\
+    &$note:$ Since $f$ is non-zero symmetric bilinear form $rank\brak{\vec{T_1}}=rank\brak{\vec{T_2}}=1$\\
+    \hline
+    \caption{Construction}
+    \label{tab:Cons}
+\end{longtable}
+\section{Answer}
+\renewcommand{\thetable}{2}
+\begin{longtable}{|l|l|}
+    \hline
+    Option 1& By using the property of rank of product of two matrices, we get\\
+    &$rank\brak{f}=rank\brak{\vec{T_1}\vec{T_2}^T}\leq min\brak{rank\brak{\vec{T_1}}, rank\brak{\vec{T_2}}}\leq 1$.\\
+    &Since $f$ is non-zero the $rank\brak{f}\neq 0$. Hence the $rank\brak{f}=1$\\
+    \hline
+    Option 2& $\beta\in\mathbb{R}^3:f\brak{\alpha,\beta}=0$ for all $\alpha\in\mathbb{R}^3\implies \beta\in\mathbb{R}^3:T_2\brak{\beta}=0$ for all $\alpha\in\mathbb{R}^3$ because \\
+    &$T_1\brak{\alpha}\neq 0$ for all $\alpha\in\mathbb{R}^3$. By using rank nullity theorem \\
+    \hline
+    & $rank\{T_2\}+dim\{Nullspace\brak{T_2}\}=3\implies dim\{Nullspace\brak{T_2}\}=2$. Similarly for $T_1$, we\\
+    &get dim\{Nullspace\brak{T_1}\}=2. Therefore \\
+    &dim $\{\beta\in\mathbb{R}^3:f\brak{\alpha,\beta}=0$ for all $\alpha\in\mathbb{R}^3\}=dim\{Nullspace\brak{T_1}\}=dim\{Nullspace\brak{T_2}\}=2$\\
+    \hline
+    Option 3&By using rank nullity theorem we get $rank\brak{f}+dim\{nullspace\brak{f}\}=3$. We know that \\
+    &$rank\brak{f}=1\implies dim\{nullspace\brak{f}\}=2$. Therefore two eigen values of $f$ will be $0$.\\
+    &Since the matrix is a symmetric matrix the eigen values are real. So, the third eigen value\\
+    & can be either positive or negative. So, the matrix will be either positive semi-definite\\
+    & or negative semi-definite accordingly.This option is correct.\\
+    \hline
+    Option 4&$\{\alpha:f\brak{\alpha,\alpha}=0\}$ is a linear subspace of dimension 2. Since the $dim\{nullspace\brak{f}\}=2$,\\
+    &and $f$ diagonalizable the two eigen vectors corresponding to $0$ eigen values form a\\
+    &subspace of dimension 2.\\
+    \hline
+    \caption{Answer}
+    \label{tab:Ans}
+\end{longtable}
+\section{Example}
+\renewcommand{\thetable}{3}
+\begin{longtable}{|l|l|}
+    \hline
+    Construction &Consider the non-zero symmetric bilinear form $f\brak{\alpha,\beta}=T_1\brak{\alpha}T_2\brak{\beta}$ on $\mathbb{R}^3$ where\\
+    &Where the matrix of linear transformations are $\vec{T_1}=\myvec{1\\0\\1}$ and $\vec{T_2}=\myvec{2\\0\\2}$.\\
+    &The matrix of symmetric bilinear form is $f=\myvec{2&0&2\\0&0&0\\2&0&2}$.The $rank\brak{f}=1$.\\
+    &$f\brak{\alpha,\beta}=\alpha^T\myvec{2&0&2\\0&0&0\\2&0&2}\beta$\\
+    &The characteristic equation is  $\abs{f-\lambda\vec{I}}=\lambda^2\brak{\lambda-4}$. So the eigen values are $0,0,4$\\
+    \hline
+    &Therefore $f$ is positive semi-definite.\\
+    &$f\brak{\alpha,\beta}=0$ for all $\alpha\in\mathbb{R}^3$, then $\beta=xe_1+ye_2$ where $e_1=\myvec{0\\1\\0}$ and $e_2=\myvec{1\\0\\-1}$.Therefore\\
+    &dim $\{\beta\in\mathbb{R}^3:f\brak{\alpha,\beta}=0$ for all $\alpha\in\mathbb{R}^3\}=2$\\
+    &$\alpha:f\brak{\alpha,\alpha}=0$ also has a dimension of 2 which forms the nullspace of $f$, where \\
+    &nullspace of $f$ is the $span\{e_1,e_2\}$\\ 
+    \hline
+    \caption{Example}
+    \label{tab:example}
+\end{longtable}
+\end{document}
